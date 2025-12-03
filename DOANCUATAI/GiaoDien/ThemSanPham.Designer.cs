@@ -414,7 +414,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.groupBox1);
             this.Name = "ThemSanPham";
-            this.Text = "ThemSanPham";
+            this.Text = "it a";
             this.Load += new System.EventHandler(this.ThemSanPham_Load_1);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Anh)).EndInit();

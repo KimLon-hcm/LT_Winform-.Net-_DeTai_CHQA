@@ -34,9 +34,11 @@ namespace DOANCUOIKY.GiaoDien
 
         private void MAIN_QL_Load(object sender, EventArgs e)
         {
+            btn_ThongKe.Enabled = true;
             if (checkQuyen(IDND))
             {
                 btn_QLNV.Enabled = true;
+              
             }
             panelFloating.Hide();
 
@@ -179,14 +181,21 @@ namespace DOANCUOIKY.GiaoDien
             labelShowDesktop.Text = QL_GiamGia.Text;
         }
 
-
+        private void btn_ThongKe_Click_1(object sender, EventArgs e)
+        {
+            panelFloating.Show();
+            panelFloating.Height = btn_ThongKe.Height;
+            panelFloating.Top = btn_ThongKe.Top;
+            OpenChildForm(new ThongKe());
+            labelShowDesktop.Text = btn_ThongKe.Text;
+        }
 
         // --- CÁC HÀM KHÁC (Giữ nguyên code cũ của bạn) ---
 
         bool checkQuyen(int idnd)
         {
             // ... (code cũ)
-            string chuoitruyvan = "SELECT IDNguoiDung FROM NguoiDung Where IDNguoiDung = '" + idnd + "' AND LoaiTK = N'Admin'";
+            string chuoitruyvan = "SELECT IDNguoiDung FROM NguoiDung Where IDNguoiDung = '" + idnd + "' AND VaiTro = N'Admin'";
             int kq = db.CheckData(chuoitruyvan);
             return kq > 0;
         }
@@ -227,6 +236,9 @@ namespace DOANCUOIKY.GiaoDien
             }
         }
 
+
         #endregion
+
+
     }
 }

@@ -296,12 +296,12 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_khachhang.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgv_khachhang.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_khachhang.Dock = System.Windows.Forms.DockStyle.Top;
             this.dgv_khachhang.Location = new System.Drawing.Point(0, 0);
             this.dgv_khachhang.Margin = new System.Windows.Forms.Padding(4);
             this.dgv_khachhang.Name = "dgv_khachhang";
             this.dgv_khachhang.RowHeadersWidth = 62;
-            this.dgv_khachhang.Size = new System.Drawing.Size(697, 729);
+            this.dgv_khachhang.Size = new System.Drawing.Size(697, 716);
             this.dgv_khachhang.TabIndex = 4;
             this.dgv_khachhang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_khachhang_CellContentClick);
             // 

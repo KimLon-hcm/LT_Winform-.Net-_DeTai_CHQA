@@ -131,37 +131,7 @@ namespace DOANCUOIKY.GiaoDien
             return true;
         }
 
-        private void btn_chonanh_Click(object sender, EventArgs e)
-        {
-            using (OpenFileDialog ofd = new OpenFileDialog())
-            {
-                ofd.Filter = "Image Files (*.jpg;*.jpeg;*.png;*.gif;*.bmp)|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
-                if (ofd.ShowDialog() == DialogResult.OK)
-                {
-                    string duongDanFileGoc = ofd.FileName;
-                    tenFileAnhMoi = Path.GetFileName(duongDanFileGoc);
-                    string folderAnh = Path.Combine(Application.StartupPath, "images");
-
-                    // Tạo thư mục nếu chưa tồn tại
-                    if (!Directory.Exists(folderAnh))
-                        Directory.CreateDirectory(folderAnh);
-
-                    string duongDanFileDich = Path.Combine(folderAnh, tenFileAnhMoi);
-
-                    try
-                    {
-                        File.Copy(duongDanFileGoc, duongDanFileDich, true);
-                        Anh.Image = Image.FromFile(duongDanFileDich);
-                        Anh.SizeMode = PictureBoxSizeMode.Zoom;
-                        //lbl_tenfile.Text = "File: " + tenFileAnhMoi;
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Lỗi khi tải ảnh: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-            }
-        }
+       
 
 
         private void ThemSanPham_Load_1(object sender, EventArgs e)
@@ -180,7 +150,24 @@ namespace DOANCUOIKY.GiaoDien
 
         private void btn_chonanh_Click_1(object sender, EventArgs e)
         {
-            btn_chonanh_Click(null, null);
+            OpenFileDialog openFile = new OpenFileDialog();
+            openFile.Filter = "Image Files (*.jpg; *.jpeg; *.png; *.gif)|*.jpg; *.jpeg; *.png; *.gif";
+            if (openFile.ShowDialog() == DialogResult.OK)
+            {
+                string duongDanFileGoc = openFile.FileName;
+                tenFileAnhMoi = Path.GetFileName(duongDanFileGoc);
+                string duongDanFileDich = Path.Combine(Application.StartupPath, "images", tenFileAnhMoi);
+                try
+                {
+                    File.Copy(duongDanFileGoc, duongDanFileDich, true);
+                    Anh.Image = Image.FromFile(duongDanFileDich);
+                    btn_luu.Enabled = true;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Không thể tải ảnh: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void btn_luu_Click(object sender, EventArgs e)

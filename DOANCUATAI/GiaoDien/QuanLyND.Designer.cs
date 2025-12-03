@@ -35,7 +35,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txt_tennd = new System.Windows.Forms.TextBox();
-            this.txt_diachi = new System.Windows.Forms.TextBox();
             this.txt_sdt = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btn_all = new System.Windows.Forms.Button();
@@ -61,6 +60,7 @@
             this.panelRight = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.cbb_trangthai = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_NguoiDung)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -96,9 +96,9 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(29, 406);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 24);
+            this.label4.Size = new System.Drawing.Size(102, 24);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Địa chỉ:";
+            this.label4.Text = "Trạng Thái";
             // 
             // label6
             // 
@@ -118,15 +118,6 @@
             this.txt_tennd.Name = "txt_tennd";
             this.txt_tennd.Size = new System.Drawing.Size(333, 27);
             this.txt_tennd.TabIndex = 2;
-            // 
-            // txt_diachi
-            // 
-            this.txt_diachi.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_diachi.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_diachi.Location = new System.Drawing.Point(29, 433);
-            this.txt_diachi.Name = "txt_diachi";
-            this.txt_diachi.Size = new System.Drawing.Size(333, 27);
-            this.txt_diachi.TabIndex = 6;
             // 
             // txt_sdt
             // 
@@ -350,6 +341,7 @@
             // 
             // panelLeft
             // 
+            this.panelLeft.Controls.Add(this.cbb_trangthai);
             this.panelLeft.Controls.Add(this.dtp_ngaylap);
             this.panelLeft.Controls.Add(this.label3);
             this.panelLeft.Controls.Add(this.cbb_loaitk);
@@ -366,7 +358,6 @@
             this.panelLeft.Controls.Add(this.btn_luu);
             this.panelLeft.Controls.Add(this.label6);
             this.panelLeft.Controls.Add(this.txt_tennd);
-            this.panelLeft.Controls.Add(this.txt_diachi);
             this.panelLeft.Controls.Add(this.txt_sdt);
             this.panelLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLeft.Location = new System.Drawing.Point(0, 0);
@@ -454,6 +445,14 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // cbb_trangthai
+            // 
+            this.cbb_trangthai.FormattingEnabled = true;
+            this.cbb_trangthai.Location = new System.Drawing.Point(29, 433);
+            this.cbb_trangthai.Name = "cbb_trangthai";
+            this.cbb_trangthai.Size = new System.Drawing.Size(332, 25);
+            this.cbb_trangthai.TabIndex = 42;
+            // 
             // QuanLyND
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -487,7 +486,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txt_tennd;
-        private System.Windows.Forms.TextBox txt_diachi;
         private System.Windows.Forms.TextBox txt_sdt;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dgv_NguoiDung;
@@ -513,5 +511,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbb_loaitk;
         private System.Windows.Forms.DateTimePicker dtp_ngaylap;
+        private System.Windows.Forms.ComboBox cbb_trangthai;
     }
 }

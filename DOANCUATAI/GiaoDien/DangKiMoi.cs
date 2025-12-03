@@ -101,8 +101,8 @@ namespace DOANCUOIKY.GiaoDien
                 // LƯU MẬT KHẨU KHÔNG HASH (Plain text) - KHÔNG AN TOÀN!
                 // Thêm người dùng mới - Mặc định LoaiTK là 'Khách hàng'
                 string sqlInsert = string.Format(@"
-                    INSERT INTO NguoiDung (HoTen, Email, SoDienThoai, MatKhau, DiaChi, LoaiTK, NgayTao)
-                    VALUES (N'{0}', '{1}', '{2}', '{3}', N'{4}', N'Customer', GETDATE())
+                    INSERT INTO NguoiDung (HoTen, Email, SoDienThoai, MatKhau, VaiTro, TrangThai, NgayTao)
+                    VALUES (N'{0}', '{1}', '{2}', '{3}',  N'Staff',N'{4}', GETDATE())
                 ", hoten, email, sdt, mk, diachi);
 
                 int kq = db.getNonQuery(sqlInsert);

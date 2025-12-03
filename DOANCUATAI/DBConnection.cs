@@ -12,7 +12,7 @@ namespace DOANCUOIKY
      {
           public SqlConnection conn;
           SqlCommand cmd;
-           public string chuoiketnoi = @"Data Source=TNTA515\SQLEXPRESS;Initial Catalog=QL_SHOPBANHANG_NET;Integrated Security=True";
+           public string chuoiketnoi = @"Data Source=TNTA515\SQLEXPRESS;Initial Catalog=QLSHOPBANHANG_NET;Integrated Security=True";
 
           public DBConnection()
           {
@@ -125,9 +125,9 @@ namespace DOANCUOIKY
                     dta["HoTen"].ToString(),
                     dta["Email"].ToString(),
                     dta["SoDienThoai"].ToString(),
-                    dta["DiaChi"].ToString(),
+                    int.Parse(dta["TrangThai"].ToString()),
                     dta["MatKhau"].ToString(),
-                    dta["LoaiTK"].ToString(),
+                    dta["VaiTro"].ToString(),
                     Convert.ToDateTime(dta["NgayTao"])
                 ));
             }

@@ -164,7 +164,7 @@ namespace DOANCUOIKY.GiaoDien
 
         private void btn_rs_Click(object sender, EventArgs e)
         {
-            ResetForm();
+            
         }
 
         #endregion
@@ -173,7 +173,8 @@ namespace DOANCUOIKY.GiaoDien
 
         private void dgv_sanpham_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-           
+            ResetForm();
+
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dgv_sanpham.Rows[e.RowIndex];
@@ -187,17 +188,30 @@ namespace DOANCUOIKY.GiaoDien
                 cbb_trangthai.Text = row.Cells["TrangThai"].Value?.ToString() ?? "";
                 cbb_loaisp.Text = row.Cells["TenLoaiHang"].Value?.ToString() ?? "";
 
-                // ===== FIX: Hiển thị hình ảnh =====
+                // ===== FIX: Hiển thị hình ảnh KHÔNG KHÓA FILE =====
                 if (row.Cells["HinhAnh"].Value != null && row.Cells["HinhAnh"].Value != DBNull.Value)
                 {
                     string folderAnh = Path.Combine(Application.StartupPath, "images");
                     string tenAnh = row.Cells["HinhAnh"].Value.ToString();
                     string duongDanAnh = Path.Combine(folderAnh, tenAnh);
+
                     try
                     {
                         if (File.Exists(duongDanAnh))
                         {
-                            picture.Image = Image.FromFile(duongDanAnh);
+                            // Giải phóng ảnh cũ nếu có
+                            if (picture.Image != null)
+                            {
+                                picture.Image.Dispose();
+                                picture.Image = null;
+                            }
+
+                            // Load ảnh mà KHÔNG khóa file
+                            using (var fs = new FileStream(duongDanAnh, FileMode.Open, FileAccess.Read))
+                            {
+                                picture.Image = Image.FromStream(fs);
+                            }
+
                             picture.SizeMode = PictureBoxSizeMode.Zoom;
                         }
                         else
@@ -214,31 +228,13 @@ namespace DOANCUOIKY.GiaoDien
                 {
                     picture.Image = null;
                 }
+
             }
         }
 
         
 
-        private void picture_Click_1(object sender, EventArgs e)
-        {
-            OpenFileDialog openFile = new OpenFileDialog();
-            openFile.Filter = "Image Files (*.jpg; *.jpeg; *.png; *.gif)|*.jpg; *.jpeg; *.png; *.gif";
-            if (openFile.ShowDialog() == DialogResult.OK)
-            {
-                string duongDanFileGoc = openFile.FileName;
-                tenFileAnhMoi = Path.GetFileName(duongDanFileGoc);
-                string duongDanFileDich = Path.Combine(Application.StartupPath, "images", tenFileAnhMoi);
-                try
-                {
-                    File.Copy(duongDanFileGoc, duongDanFileDich, true);
-                    picture.Image = Image.FromFile(duongDanFileDich);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Không thể tải ảnh: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
+        
         private void btn_xoa_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txt_idhang.Text))
@@ -348,12 +344,21 @@ namespace DOANCUOIKY.GiaoDien
 
             if (themSP.ShowDialog() == DialogResult.OK)
             {
-                // Nếu thêm thành công, tải lại danh sách
                 HienThiDSSanPham();
                 LoadComboBoxLoaiSanPham();
                 LoadComboBoxHangSanXuat();
                 ResetForm();
             }
+        }
+
+        private void reset_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_DatHang_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

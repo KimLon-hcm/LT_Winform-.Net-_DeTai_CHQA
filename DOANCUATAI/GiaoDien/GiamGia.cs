@@ -126,6 +126,7 @@ namespace DOANCUOIKY
             dgv_khachhang.DataSource = dt;
         }
 
+
         private void btn_TrangChu_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -186,6 +187,7 @@ namespace DOANCUOIKY
         {
             HienThiDSKH();
             LoadComboBoxTrangThai();
+      
         }
 
         private void txt_timnpp_TextChanged(object sender, EventArgs e)

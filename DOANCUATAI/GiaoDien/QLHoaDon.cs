@@ -115,7 +115,8 @@ namespace DOANCUOIKY.GiaoDien
 
                 // Lấy dữ liệu từ các ô trong dòng đó và hiển thị lên các control bên dưới
                 // Dùng ?.ToString() để tránh lỗi nếu giá trị trong ô là NULL
-                lb_idnd.Text = row.Cells["IDNguoiDung"].Value?.ToString();
+                lb_idnd.Text = row.Cells["IDNhanVien"].Value?.ToString();
+
                 lb_madh.Text = row.Cells["IDDonHang"].Value?.ToString();
                 lb_thanhtien.Text = row.Cells["TongThanhToan"].Value?.ToString();
 

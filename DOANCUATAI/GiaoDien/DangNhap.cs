@@ -41,18 +41,18 @@ namespace DOANCUOIKY.GiaoDien
                 // Kiểm tra mật khẩu (Lưu ý: CSDL đang lưu pass thường, thực tế nên mã hóa)
                 if (userResult.MatKhau == mk)
                 {
-                    string quyen = userResult.LoaiTK;
+                    string quyen = userResult.VaiTro;
                     int idnd = int.Parse(userResult.IDNguoiDung.ToString());
 
                     // Xử lý phân quyền dựa trên dữ liệu CSDL (ADMIN, SALE, KHO)
                     if (quyen == "Admin")
                     {
-                        MessageBox.Show("Đăng nhập thành công quyền Quản Trị (ADMIN)!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Đăng nhập thành công quyền Quản Trị (Admin)!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                    
-                    else if (quyen == "Customer")
+                    else if (quyen == "Staff")
                     {
-                        MessageBox.Show("Đăng nhập thành công quyền Khách!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Đăng nhập thành công quyền Nhân Viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {

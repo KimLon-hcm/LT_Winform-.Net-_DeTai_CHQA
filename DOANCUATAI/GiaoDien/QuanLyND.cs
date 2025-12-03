@@ -29,6 +29,7 @@ namespace DOANCUOIKY.GiaoDien
             try
             {
                 Load_DSNV();
+                //Load_CbbTrangThai();
                 Load_CbbChucVu();
             }
             catch (Exception ex)
@@ -42,7 +43,7 @@ namespace DOANCUOIKY.GiaoDien
         {
             try
             {
-                string sql = "SELECT IDNguoiDung, HoTen, Email, SoDienThoai, DiaChi, LoaiTK, NgayTao FROM NguoiDung ORDER BY IDNguoiDung DESC";
+                string sql = "SELECT IDNguoiDung, HoTen, Email, SoDienThoai, TrangThai, VaiTro, NgayTao FROM NguoiDung ORDER BY IDNguoiDung DESC";
                 DataTable dt = db.getDataTable(sql);
 
                 if (dt == null || dt.Rows.Count == 0)
@@ -88,11 +89,11 @@ namespace DOANCUOIKY.GiaoDien
         {
             try
             {
-                string sql = "SELECT DISTINCT LoaiTK FROM NguoiDung";
+                string sql = "SELECT DISTINCT VaiTro FROM NguoiDung";
                 DataTable dt = db.getDataTable(sql);
                 cbb_loaitk.DataSource = dt;
-                cbb_loaitk.DisplayMember = "LoaiTK";
-                cbb_loaitk.ValueMember = "LoaiTK";
+                cbb_loaitk.DisplayMember = "VaiTro";
+                cbb_loaitk.ValueMember = "VaiTro";
             }
             catch (Exception ex)
             {
@@ -100,12 +101,20 @@ namespace DOANCUOIKY.GiaoDien
             }
         }
 
+        //void Load_CbbTrangThai()
+        //{
+        //    cbb_trangthai.Items.Clear();
+        //    cbb_trangthai.Items.Add("Hoạt động");
+        //    cbb_trangthai.Items.Add("Không hoạt động");
+        //    cbb_trangthai.SelectedIndex = true; 
+        //}
+
         // Reset form
         private void Reset()
         {
             txt_idnd.Text = "";
             txt_tennd.Text = "";
-            txt_diachi.Text = "";
+            cbb_trangthai.Text = "";
             txt_sdt.Text = "";
             dtp_ngaylap.Value = DateTime.Now;
             txt_email.Text = "";
@@ -122,12 +131,7 @@ namespace DOANCUOIKY.GiaoDien
                 txt_tennd.Focus();
                 return false;
             }
-            if (string.IsNullOrEmpty(txt_diachi.Text))
-            {
-                MessageBox.Show("Vui lòng điền địa chỉ.");
-                txt_diachi.Focus();
-                return false;
-            }
+
             if (string.IsNullOrEmpty(txt_sdt.Text))
             {
                 MessageBox.Show("Vui lòng điền số điện thoại.");
@@ -162,16 +166,16 @@ namespace DOANCUOIKY.GiaoDien
                 if (!KiemTraThongTin())
                     return;
 
-                string sqlInsert = @"INSERT INTO NguoiDung (HoTen, NgayTao, DiaChi, SoDienThoai, LoaiTK, Email) 
-                                    VALUES (@HoTen, @NgayTao, @DiaChi, @SoDienThoai, @LoaiTK, @Email)";
+                string sqlInsert = @"INSERT INTO NguoiDung (HoTen, NgayTao, TrangThai, SoDienThoai, VaiTro, Email) 
+                                    VALUES (@HoTen, @NgayTao, @TrangThai, @SoDienThoai, @VaiTro, @Email)";
 
                 db.Open();
                 SqlCommand cmd = new SqlCommand(sqlInsert, db.conn);
                 cmd.Parameters.AddWithValue("@HoTen", txt_tennd.Text);
                 cmd.Parameters.AddWithValue("@NgayTao", dtp_ngaylap.Value);
-                cmd.Parameters.AddWithValue("@DiaChi", txt_diachi.Text);
+                cmd.Parameters.AddWithValue("@TrangThai", cbb_trangthai.SelectedItem);
                 cmd.Parameters.AddWithValue("@SoDienThoai", txt_sdt.Text);
-                cmd.Parameters.AddWithValue("@LoaiTK", cbb_loaitk.SelectedValue);
+                cmd.Parameters.AddWithValue("@VaiTro", cbb_loaitk.SelectedValue);
                 cmd.Parameters.AddWithValue("@Email", txt_email.Text);
                 cmd.ExecuteNonQuery();
                 db.Close();
@@ -203,9 +207,9 @@ namespace DOANCUOIKY.GiaoDien
                 string sqlUpdate = @"UPDATE NguoiDung SET 
                                     HoTen = @HoTen, 
                                     NgayTao = @NgayTao, 
-                                    DiaChi = @DiaChi, 
+                                    TrangThai = @TrangThai, 
                                     SoDienThoai = @SoDienThoai, 
-                                    LoaiTK = @LoaiTK, 
+                                    VaiTro = @VaiTro, 
                                     Email = @Email 
                                     WHERE IDNguoiDung = @IDNguoiDung";
 
@@ -213,9 +217,9 @@ namespace DOANCUOIKY.GiaoDien
                 SqlCommand cmd = new SqlCommand(sqlUpdate, db.conn);
                 cmd.Parameters.AddWithValue("@HoTen", txt_tennd.Text);
                 cmd.Parameters.AddWithValue("@NgayTao", dtp_ngaylap.Value);
-                cmd.Parameters.AddWithValue("@DiaChi", txt_diachi.Text);
+                cmd.Parameters.AddWithValue("@TrangThai", cbb_trangthai.Text);
                 cmd.Parameters.AddWithValue("@SoDienThoai", txt_sdt.Text);
-                cmd.Parameters.AddWithValue("@LoaiTK", cbb_loaitk.SelectedValue);
+                cmd.Parameters.AddWithValue("@VaiTro", cbb_loaitk.SelectedValue);
                 cmd.Parameters.AddWithValue("@Email", txt_email.Text);
                 cmd.Parameters.AddWithValue("@IDNguoiDung", txt_idnd.Text);
                 cmd.ExecuteNonQuery();
@@ -301,8 +305,8 @@ namespace DOANCUOIKY.GiaoDien
                                         HoTen = N'" + row.Cells["HoTen"].Value?.ToString()?.Replace("'", "''") + @"',
                                         Email = N'" + row.Cells["Email"].Value?.ToString()?.Replace("'", "''") + @"',
                                         SoDienThoai = '" + row.Cells["SoDienThoai"].Value?.ToString() + @"',
-                                        DiaChi = N'" + row.Cells["DiaChi"].Value?.ToString()?.Replace("'", "''") + @"',
-                                        LoaiTK = N'" + row.Cells["LoaiTK"].Value?.ToString() + @"'
+                                        TrangThai = N'" + row.Cells["TrangThai"].Value?.ToString()?.Replace("'", "''") + @"',
+                                        VaiTro = N'" + row.Cells["VaiTro"].Value?.ToString() + @"'
                                         WHERE IDNguoiDung = " + idNV;
 
                     try
@@ -368,15 +372,15 @@ namespace DOANCUOIKY.GiaoDien
                 DataGridViewRow row = dgv_NguoiDung.Rows[e.RowIndex];
                 txt_idnd.Text = row.Cells["IDNguoiDung"].Value?.ToString() ?? "";
                 txt_tennd.Text = row.Cells["HoTen"].Value?.ToString() ?? "";
-                txt_diachi.Text = row.Cells["DiaChi"].Value?.ToString() ?? "";
+                cbb_trangthai.Text = row.Cells["TrangThai"].Value?.ToString() ?? "";
                 txt_sdt.Text = row.Cells["SoDienThoai"].Value?.ToString() ?? "";
                 txt_email.Text = row.Cells["Email"].Value?.ToString() ?? "";
 
                 if (row.Cells["NgayTao"].Value != null)
                     dtp_ngaylap.Value = Convert.ToDateTime(row.Cells["NgayTao"].Value);
 
-                if (row.Cells["LoaiTK"].Value != null)
-                    cbb_loaitk.SelectedValue = row.Cells["LoaiTK"].Value.ToString();
+                if (row.Cells["VaiTro"].Value != null)
+                    cbb_loaitk.SelectedValue = row.Cells["VaiTro"].Value.ToString();
             }
             catch (Exception ex)
             {
@@ -396,7 +400,7 @@ namespace DOANCUOIKY.GiaoDien
                     return;
                 }
 
-                string sql = "SELECT IDNguoiDung, HoTen, Email, SoDienThoai, DiaChi, LoaiTK, NgayTao FROM NguoiDung WHERE HoTen LIKE N'%" + key + "%' ORDER BY IDNguoiDung DESC";
+                string sql = "SELECT IDNguoiDung, HoTen, Email, SoDienThoai, TrangThai, VaiTro, NgayTao FROM NguoiDung WHERE HoTen LIKE N'%" + key + "%' ORDER BY IDNguoiDung DESC";
                 DataTable dt = db.getDataTable(sql);
                 dgv_NguoiDung.DataSource = dt;
             }

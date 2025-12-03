@@ -18,23 +18,23 @@ namespace DOANCUOIKY
         public string HoTen { get; set; }
         public string Email { get; set; }
         public string SDT { get; set; }
-        public string DiaChi { get; set; }
+        public int TrangThai { get; set; }
         public string MatKhau { get; set; }
-        public string LoaiTK { get; set; }
+        public string VaiTro { get; set; }
         public DateTime NgayTao { get; set; }
 
         public NguoiDung() { }
 
         public NguoiDung(int id, string hoten, string email, string sdt,
-                         string diachi, string matkhau, string loaitk, DateTime ngaytao)
+                         int trangthai, string matkhau, string vaitro, DateTime ngaytao)
         {
             IDNguoiDung = id;
             HoTen = hoten;
             Email = email;
             SDT = sdt;
-            DiaChi = diachi;
+            TrangThai = trangthai;
             MatKhau = matkhau;
-            LoaiTK = loaitk;
+            VaiTro = vaitro;
             NgayTao = ngaytao;
         }
 
@@ -56,8 +56,8 @@ namespace DOANCUOIKY
                 tk.SDT = Reader["SoDienThoai"].ToString();
                 tk.MatKhau = Reader["MatKhau"].ToString();
                 tk.Email = Reader["Email"].ToString(); // Cần lấy quyền để phân quyền
-                tk.DiaChi = Reader["DiaChi"].ToString();
-                tk.LoaiTK = Reader["LoaiTK"].ToString();
+                //tk.TrangThai = bool.Parse(Reader["TrangThai"].ToString());
+                tk.VaiTro = Reader["VaiTro"].ToString();
                 tk.NgayTao = DateTime.Parse(Reader["NgayTao"].ToString());
             }
             Reader.Close(); // Nhớ đóng Reader sau khi dùng

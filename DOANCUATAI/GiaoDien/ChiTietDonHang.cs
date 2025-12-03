@@ -49,16 +49,16 @@ namespace DOANCUOIKY.GiaoDien
                 }
 
                 DataRow row = dt.Rows[0];
-                string idnd = row["IDNguoiDung"].ToString();
+                string idnd = row["IDNhanVien"].ToString();
 
                 // Load tên NV và KH
                 string sql2 = @"SELECT 
-                               (SELECT HoTen FROM NguoiDung WHERE IDNguoiDung = @IDNguoiDung) AS TenND, 
+                               (SELECT HoTen FROM NguoiDung WHERE IDNguoiDung = @IDNhanVien) AS TenND, 
                                (SELECT TenNguoiNhan FROM DonHang WHERE IDDonHang = @IDDonHang) AS TenNN";
 
                 db.Open();
                 SqlCommand cmd2 = new SqlCommand(sql2, db.conn);
-                cmd2.Parameters.AddWithValue("@IDNguoiDung", idnd);
+                cmd2.Parameters.AddWithValue("@IDNhanVien", idnd);
                 cmd2.Parameters.AddWithValue("@IDDonHang", iddh);
 
                 DataTable dt2 = new DataTable();
