@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DangKyMoi));
             this.panelControls = new System.Windows.Forms.Panel();
             this.txt_sdt = new System.Windows.Forms.TextBox();
-            this.txt_diachi = new System.Windows.Forms.TextBox();
             this.txt_email = new System.Windows.Forms.TextBox();
             this.txt_hoten = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -54,7 +53,6 @@
             // 
             this.panelControls.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.panelControls.Controls.Add(this.txt_sdt);
-            this.panelControls.Controls.Add(this.txt_diachi);
             this.panelControls.Controls.Add(this.txt_email);
             this.panelControls.Controls.Add(this.txt_hoten);
             this.panelControls.Controls.Add(this.label7);
@@ -78,23 +76,15 @@
             // 
             // txt_sdt
             // 
-            this.txt_sdt.Location = new System.Drawing.Point(194, 178);
+            this.txt_sdt.Location = new System.Drawing.Point(194, 255);
             this.txt_sdt.Multiline = true;
             this.txt_sdt.Name = "txt_sdt";
             this.txt_sdt.Size = new System.Drawing.Size(466, 35);
             this.txt_sdt.TabIndex = 25;
             // 
-            // txt_diachi
-            // 
-            this.txt_diachi.Location = new System.Drawing.Point(194, 266);
-            this.txt_diachi.Multiline = true;
-            this.txt_diachi.Name = "txt_diachi";
-            this.txt_diachi.Size = new System.Drawing.Size(466, 35);
-            this.txt_diachi.TabIndex = 24;
-            // 
             // txt_email
             // 
-            this.txt_email.Location = new System.Drawing.Point(194, 339);
+            this.txt_email.Location = new System.Drawing.Point(193, 181);
             this.txt_email.Multiline = true;
             this.txt_email.Name = "txt_email";
             this.txt_email.Size = new System.Drawing.Size(466, 35);
@@ -123,7 +113,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(25, 178);
+            this.label6.Location = new System.Drawing.Point(13, 257);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(130, 24);
@@ -137,9 +127,8 @@
             this.label1.Location = new System.Drawing.Point(25, 266);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 24);
+            this.label1.Size = new System.Drawing.Size(0, 24);
             this.label1.TabIndex = 19;
-            this.label1.Text = "Địa Chỉ";
             // 
             // label4
             // 
@@ -157,7 +146,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(25, 339);
+            this.label5.Location = new System.Drawing.Point(33, 192);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(57, 24);
@@ -168,7 +157,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(25, 410);
+            this.label2.Location = new System.Drawing.Point(33, 344);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(91, 24);
@@ -179,7 +168,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(25, 484);
+            this.label3.Location = new System.Drawing.Point(25, 436);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(160, 24);
@@ -194,7 +183,7 @@
             this.cbShowPass.FlatAppearance.BorderSize = 0;
             this.cbShowPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbShowPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbShowPass.Location = new System.Drawing.Point(262, 521);
+            this.cbShowPass.Location = new System.Drawing.Point(262, 493);
             this.cbShowPass.Margin = new System.Windows.Forms.Padding(4);
             this.cbShowPass.Name = "cbShowPass";
             this.cbShowPass.Size = new System.Drawing.Size(163, 28);
@@ -229,7 +218,7 @@
             this.txt_MK.BackColor = System.Drawing.SystemColors.Window;
             this.txt_MK.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_MK.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.txt_MK.Location = new System.Drawing.Point(194, 398);
+            this.txt_MK.Location = new System.Drawing.Point(194, 332);
             this.txt_MK.Margin = new System.Windows.Forms.Padding(4);
             this.txt_MK.Name = "txt_MK";
             this.txt_MK.Size = new System.Drawing.Size(466, 41);
@@ -245,7 +234,7 @@
             this.btn_DangKy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_DangKy.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
             this.btn_DangKy.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_DangKy.Location = new System.Drawing.Point(67, 557);
+            this.btn_DangKy.Location = new System.Drawing.Point(66, 529);
             this.btn_DangKy.Margin = new System.Windows.Forms.Padding(4);
             this.btn_DangKy.Name = "btn_DangKy";
             this.btn_DangKy.Size = new System.Drawing.Size(548, 53);
@@ -261,7 +250,7 @@
             this.txt_XNMK.BackColor = System.Drawing.SystemColors.HighlightText;
             this.txt_XNMK.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_XNMK.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.txt_XNMK.Location = new System.Drawing.Point(194, 472);
+            this.txt_XNMK.Location = new System.Drawing.Point(193, 424);
             this.txt_XNMK.Margin = new System.Windows.Forms.Padding(4);
             this.txt_XNMK.Name = "txt_XNMK";
             this.txt_XNMK.Size = new System.Drawing.Size(466, 41);
@@ -299,7 +288,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_sdt;
-        private System.Windows.Forms.TextBox txt_diachi;
         private System.Windows.Forms.TextBox txt_email;
         private System.Windows.Forms.TextBox txt_hoten;
     }

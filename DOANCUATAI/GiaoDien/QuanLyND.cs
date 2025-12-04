@@ -29,7 +29,7 @@ namespace DOANCUOIKY.GiaoDien
             try
             {
                 Load_DSNV();
-                //Load_CbbTrangThai();
+                Load_CbbTrangThai();
                 Load_CbbChucVu();
             }
             catch (Exception ex)
@@ -101,14 +101,13 @@ namespace DOANCUOIKY.GiaoDien
             }
         }
 
-        //void Load_CbbTrangThai()
-        //{
-        //    cbb_trangthai.Items.Clear();
-        //    cbb_trangthai.Items.Add("Hoạt động");
-        //    cbb_trangthai.Items.Add("Không hoạt động");
-        //    cbb_trangthai.SelectedIndex = true; 
-        //}
-
+        void Load_CbbTrangThai()
+        {
+            cbb_trangthai.Items.Clear();
+            cbb_trangthai.Items.Add("Hoạt động");
+            cbb_trangthai.Items.Add("Không hoạt động");
+            cbb_trangthai.SelectedIndex = 1; // Chọn mục đầu tiên ("Hoạt động")
+        }
         // Reset form
         private void Reset()
         {
@@ -203,7 +202,7 @@ namespace DOANCUOIKY.GiaoDien
 
                 if (!KiemTraThongTin())
                     return;
-
+                int trangThai = cbb_trangthai.Text == "Hoạt động" ? 1 : 0;
                 string sqlUpdate = @"UPDATE NguoiDung SET 
                                     HoTen = @HoTen, 
                                     NgayTao = @NgayTao, 
@@ -217,7 +216,7 @@ namespace DOANCUOIKY.GiaoDien
                 SqlCommand cmd = new SqlCommand(sqlUpdate, db.conn);
                 cmd.Parameters.AddWithValue("@HoTen", txt_tennd.Text);
                 cmd.Parameters.AddWithValue("@NgayTao", dtp_ngaylap.Value);
-                cmd.Parameters.AddWithValue("@TrangThai", cbb_trangthai.Text);
+                cmd.Parameters.AddWithValue("@TrangThai",trangThai);
                 cmd.Parameters.AddWithValue("@SoDienThoai", txt_sdt.Text);
                 cmd.Parameters.AddWithValue("@VaiTro", cbb_loaitk.SelectedValue);
                 cmd.Parameters.AddWithValue("@Email", txt_email.Text);
@@ -372,7 +371,12 @@ namespace DOANCUOIKY.GiaoDien
                 DataGridViewRow row = dgv_NguoiDung.Rows[e.RowIndex];
                 txt_idnd.Text = row.Cells["IDNguoiDung"].Value?.ToString() ?? "";
                 txt_tennd.Text = row.Cells["HoTen"].Value?.ToString() ?? "";
-                cbb_trangthai.Text = row.Cells["TrangThai"].Value?.ToString() ?? "";
+                string tt = row.Cells["TrangThai"].Value?.ToString() ?? "";
+                if (tt.ToLower() == "true" || tt == "1")
+                    cbb_trangthai.Text = "Hoạt động";
+                else 
+                    cbb_trangthai.Text = "Không hoạt động";
+
                 txt_sdt.Text = row.Cells["SoDienThoai"].Value?.ToString() ?? "";
                 txt_email.Text = row.Cells["Email"].Value?.ToString() ?? "";
 
@@ -389,6 +393,11 @@ namespace DOANCUOIKY.GiaoDien
         }
 
         private void btn_TimNV_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_TimNV_TextChanged(object sender, EventArgs e)
         {
             try
             {
@@ -408,11 +417,6 @@ namespace DOANCUOIKY.GiaoDien
             {
                 MessageBox.Show("Lỗi khi tìm kiếm: " + ex.Message);
             }
-        }
-
-        private void txt_TimNV_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void btn_all_Click(object sender, EventArgs e)

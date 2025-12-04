@@ -25,6 +25,7 @@ namespace DOANCUOIKY.GiaoDien
         {
             string email = txt_email.Text;
             string mk = txt_MK.Text;
+            string sdt = txt_email.Text;
 
             if ( string.IsNullOrWhiteSpace(mk))
             {
@@ -33,23 +34,25 @@ namespace DOANCUOIKY.GiaoDien
             }
 
             NguoiDung userObj = new NguoiDung();
-            // Gọi hàm tìm tài khoản 1 lần duy nhất
+  
             NguoiDung userResult = userObj.TimTaiKhoan(email);
+            NguoiDung user =userObj.TimTaiKhoanSDT(sdt);
 
             if (userResult != null)
             {
-                // Kiểm tra mật khẩu (Lưu ý: CSDL đang lưu pass thường, thực tế nên mã hóa)
+
                 if (userResult.MatKhau == mk)
                 {
                     string quyen = userResult.VaiTro;
+
                     int idnd = int.Parse(userResult.IDNguoiDung.ToString());
 
-                    // Xử lý phân quyền dựa trên dữ liệu CSDL (ADMIN, SALE, KHO)
+
                     if (quyen == "Admin")
                     {
                         MessageBox.Show("Đăng nhập thành công quyền Quản Trị (Admin)!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                   
+
                     else if (quyen == "Staff")
                     {
                         MessageBox.Show("Đăng nhập thành công quyền Nhân Viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -59,32 +62,59 @@ namespace DOANCUOIKY.GiaoDien
                         MessageBox.Show("Quyền hạn không xác định!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
-
-                    // Mở Form Main và truyền Mã nhân viên vào
-                    // Giả sử Form MAIN_QL của bạn có constructor nhận vào (string manv, string quyen) thì càng tốt
                     MAIN_QL main = new MAIN_QL(idnd);
                     this.Hide();
                     main.ShowDialog();
-                    this.Show(); // Hiện lại form đăng nhập khi form Main đóng
+                    this.Show();
                 }
                 else
                 {
                     MessageBox.Show("Mật khẩu không chính xác!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else
+            else if (user != null)
+            {
+
+                if (user.MatKhau == mk)
+                {
+
+                    string quyen = user.VaiTro;
+                    int idnd = int.Parse(user.IDNguoiDung.ToString());
+
+
+
+
+                    if (quyen == "Admin")
+                    {
+                        MessageBox.Show("Đăng nhập thành công quyền Quản Trị (Admin)!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
+                    else if (quyen == "Staff")
+                    {
+                        MessageBox.Show("Đăng nhập thành công quyền Nhân Viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Quyền hạn không xác định!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    MAIN_QL main = new MAIN_QL(idnd);
+                    this.Hide();
+                    main.ShowDialog();
+                    this.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Mật khẩu không chính xác!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+             else
             {
                 MessageBox.Show("Tên đăng nhập không tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        //private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        //{
-        //    this.Hide();
-        //    DangKy dk = new DangKy();
-        //    dk.ShowDialog();
-        //    this.Show();
-        //}
+
 
         private void button1_Click(object sender, EventArgs e)
         {

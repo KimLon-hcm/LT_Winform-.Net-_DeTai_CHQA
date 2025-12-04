@@ -42,25 +42,48 @@ namespace DOANCUOIKY
 
         public NguoiDung TimTaiKhoan(string Email)
         {
-            NguoiDung tk = null; // Khởi tạo null để dễ kiểm tra
-            // Lấy toàn bộ thông tin từ bảng Users
+            NguoiDung tk = null; 
+         
             string chuoitruyvan = "SELECT * FROM NguoiDung WHERE Email =  '" + Email + "' ";
 
             SqlDataReader Reader = db.ExcuteQuery(chuoitruyvan);
 
             if (Reader.Read())
             {
-                tk = new NguoiDung(); // Tìm thấy mới khởi tạo đối tượng
-                tk.IDNguoiDung = int.Parse(Reader["IDNguoiDung"].ToString()); // Cần lấy mã để truyền sang Form Main
+                tk = new NguoiDung(); 
+                tk.IDNguoiDung = int.Parse(Reader["IDNguoiDung"].ToString()); 
                 tk.HoTen = Reader["HoTen"].ToString();
                 tk.SDT = Reader["SoDienThoai"].ToString();
                 tk.MatKhau = Reader["MatKhau"].ToString();
-                tk.Email = Reader["Email"].ToString(); // Cần lấy quyền để phân quyền
-                //tk.TrangThai = bool.Parse(Reader["TrangThai"].ToString());
+                tk.Email = Reader["Email"].ToString(); 
+
                 tk.VaiTro = Reader["VaiTro"].ToString();
                 tk.NgayTao = DateTime.Parse(Reader["NgayTao"].ToString());
             }
-            Reader.Close(); // Nhớ đóng Reader sau khi dùng
+            Reader.Close(); 
+            return tk;
+        }
+        public NguoiDung TimTaiKhoanSDT(string Sdt)
+        {
+            NguoiDung tk = null;
+
+            string chuoitruyvan = "SELECT * FROM NguoiDung WHERE SoDienThoai =  '" + Sdt + "' ";
+
+            SqlDataReader Reader = db.ExcuteQuery(chuoitruyvan);
+
+            if (Reader.Read())
+            {
+                tk = new NguoiDung();
+                tk.IDNguoiDung = int.Parse(Reader["IDNguoiDung"].ToString());
+                tk.HoTen = Reader["HoTen"].ToString();
+                tk.SDT = Reader["SoDienThoai"].ToString();
+                tk.MatKhau = Reader["MatKhau"].ToString();
+                tk.Email = Reader["Email"].ToString();
+
+                tk.VaiTro = Reader["VaiTro"].ToString();
+                tk.NgayTao = DateTime.Parse(Reader["NgayTao"].ToString());
+            }
+            Reader.Close();
             return tk;
         }
 

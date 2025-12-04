@@ -52,6 +52,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txt_idnd = new System.Windows.Forms.TextBox();
             this.panelLeft = new System.Windows.Forms.Panel();
+            this.cbb_trangthai = new System.Windows.Forms.ComboBox();
             this.dtp_ngaylap = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.cbb_loaitk = new System.Windows.Forms.ComboBox();
@@ -60,7 +61,6 @@
             this.panelRight = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.cbb_trangthai = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_NguoiDung)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -152,7 +152,7 @@
             this.btn_all.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_all.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_all.ForeColor = System.Drawing.Color.White;
-            this.btn_all.Location = new System.Drawing.Point(861, 27);
+            this.btn_all.Location = new System.Drawing.Point(22, 42);
             this.btn_all.Name = "btn_all";
             this.btn_all.Size = new System.Drawing.Size(103, 30);
             this.btn_all.TabIndex = 40;
@@ -168,7 +168,7 @@
             this.btn_TimNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_TimNV.Location = new System.Drawing.Point(790, 27);
             this.btn_TimNV.Name = "btn_TimNV";
-            this.btn_TimNV.Size = new System.Drawing.Size(65, 30);
+            this.btn_TimNV.Size = new System.Drawing.Size(65, 40);
             this.btn_TimNV.TabIndex = 20;
             this.btn_TimNV.UseVisualStyleBackColor = false;
             this.btn_TimNV.Click += new System.EventHandler(this.btn_TimNV_Click);
@@ -207,6 +207,7 @@
             this.dgv_NguoiDung.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_NguoiDung.Size = new System.Drawing.Size(942, 468);
             this.dgv_NguoiDung.TabIndex = 0;
+            this.dgv_NguoiDung.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_NhanVien_CellContentClick);
             this.dgv_NguoiDung.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_NhanVien_CellContentClick);
             // 
             // label8
@@ -214,7 +215,7 @@
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(516, 34);
+            this.label8.Location = new System.Drawing.Point(495, 33);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(92, 24);
             this.label8.TabIndex = 18;
@@ -333,6 +334,7 @@
             // txt_idnd
             // 
             this.txt_idnd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_idnd.Enabled = false;
             this.txt_idnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_idnd.Location = new System.Drawing.Point(30, 149);
             this.txt_idnd.Name = "txt_idnd";
@@ -364,6 +366,14 @@
             this.panelLeft.Name = "panelLeft";
             this.panelLeft.Size = new System.Drawing.Size(400, 716);
             this.panelLeft.TabIndex = 42;
+            // 
+            // cbb_trangthai
+            // 
+            this.cbb_trangthai.FormattingEnabled = true;
+            this.cbb_trangthai.Location = new System.Drawing.Point(29, 433);
+            this.cbb_trangthai.Name = "cbb_trangthai";
+            this.cbb_trangthai.Size = new System.Drawing.Size(332, 25);
+            this.cbb_trangthai.TabIndex = 42;
             // 
             // dtp_ngaylap
             // 
@@ -444,14 +454,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // cbb_trangthai
-            // 
-            this.cbb_trangthai.FormattingEnabled = true;
-            this.cbb_trangthai.Location = new System.Drawing.Point(29, 433);
-            this.cbb_trangthai.Name = "cbb_trangthai";
-            this.cbb_trangthai.Size = new System.Drawing.Size(332, 25);
-            this.cbb_trangthai.TabIndex = 42;
             // 
             // QuanLyND
             // 

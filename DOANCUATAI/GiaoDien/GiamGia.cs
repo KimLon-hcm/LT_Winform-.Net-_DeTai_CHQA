@@ -31,7 +31,7 @@ namespace DOANCUOIKY
         private bool KiemTraThongTinHopLe()
         {
             // Kiểm tra mã giảm giá
-            if (string.IsNullOrWhiteSpace(txt_ID.Text))
+            if (string.IsNullOrWhiteSpace(txt_ma.Text))
             {
                 MessageBox.Show("Mã giảm giá không được để trống!");
                 return false;
@@ -40,35 +40,35 @@ namespace DOANCUOIKY
             // Kiểm tra loại
             if (string.IsNullOrWhiteSpace(txt_loai.Text) || !int.TryParse(txt_loai.Text, out _))
             {
-                MessageBox.Show("Loại phải là số nguyên!");
+                MessageBox.Show("Loại phải là số nguyên! và không được để trống");
                 return false;
             }
 
             // Kiểm tra giá trị
             if (string.IsNullOrWhiteSpace(txt_gia.Text) || !decimal.TryParse(txt_gia.Text, out decimal gia) || gia < 0)
             {
-                MessageBox.Show("Giá trị phải là số dương!");
+                MessageBox.Show("Giá trị phải là số dương!  và không được để trống");
                 return false;
             }
 
             // Kiểm tra đơn hàng tối thiểu
             if (string.IsNullOrWhiteSpace(txt_dontoithieu.Text) || !decimal.TryParse(txt_dontoithieu.Text, out decimal dontoithieu) || dontoithieu < 0)
             {
-                MessageBox.Show("Đơn hàng tối thiểu phải là số dương!");
+                MessageBox.Show("Đơn hàng tối thiểu phải là số dương!  và không được để trống");
                 return false;
             }
 
             // Kiểm tra giảm tối đa
             if (string.IsNullOrWhiteSpace(txt_giamtoida.Text) || !decimal.TryParse(txt_giamtoida.Text, out decimal giamtoida) || giamtoida < 0)
             {
-                MessageBox.Show("Giảm tối đa phải là số dương!");
+                MessageBox.Show("Giảm tối đa phải là số dương!  và không được để trống");
                 return false;
             }
 
             // Kiểm tra số lượng
             if (string.IsNullOrWhiteSpace(txt_soluong.Text) || !int.TryParse(txt_soluong.Text, out int soluong) || soluong < 0)
             {
-                MessageBox.Show("Số lượng phải là số nguyên dương!");
+                MessageBox.Show("Số lượng phải là số nguyên dương!  và không được để trống");
                 return false;
             }
 
@@ -187,7 +187,9 @@ namespace DOANCUOIKY
         {
             HienThiDSKH();
             LoadComboBoxTrangThai();
-      
+            loadLoai();
+
+
         }
 
         private void txt_timnpp_TextChanged(object sender, EventArgs e)
@@ -203,7 +205,7 @@ namespace DOANCUOIKY
                 return;
             }
 
-            // Kiểm tra thông tin hợp lệ
+    
             if (!KiemTraThongTinHopLe())
             {
                 return;
@@ -397,6 +399,17 @@ namespace DOANCUOIKY
         {
             Reset();
         }
+
+        void loadLoai()
+        {
+            dgv_Loai.ReadOnly = true;
+            string chuoitruyvan = "SELECT * FROM LoaiHang";
+            DataTable dt = db.getDataTable(chuoitruyvan);
+            dgv_Loai.DataSource = dt;
+        }
+        
+
+       
     }
 }
 

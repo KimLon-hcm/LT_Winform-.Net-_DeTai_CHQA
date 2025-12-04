@@ -226,6 +226,7 @@ namespace DOANCUOIKY.GiaoDien
         void EnableEditMode(bool enable)
         {
             isEditing = enable;
+            txt_idhang.Enabled = enable;
             txt_tenhang.ReadOnly = !enable;
             txt_mota.ReadOnly = !enable;
             cbb_loai.Enabled = enable;
@@ -335,21 +336,21 @@ namespace DOANCUOIKY.GiaoDien
         {
             try
             {
-                DialogResult dr = MessageBox.Show("Bạn có chắc chắn muốn xóa biến thể này? Hành động này không thể hoàn tác!",
+                DialogResult dr = MessageBox.Show(
+                    "Bạn có chắc chắn muốn xóa biến thể này? Hành động này không thể hoàn tác!",
                     "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (dr == DialogResult.Yes)
                 {
                     db.Open();
-
-                    string sql = "DELETE FROM HangHoa_BThe WHERE IDBienThe = @IDBienThe";
+                    string sql = "EXEC XoaBienThe @IDBienThe";
                     SqlCommand cmd = new SqlCommand(sql, db.conn);
                     cmd.Parameters.AddWithValue("@IDBienThe", IDBienThe);
                     cmd.ExecuteNonQuery();
-
                     db.Close();
 
-                    MessageBox.Show("Xóa biến thể thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Thao tác thành công!", "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
             }
@@ -357,11 +358,18 @@ namespace DOANCUOIKY.GiaoDien
             {
                 if (db.conn.State == ConnectionState.Open)
                     db.Close();
-                MessageBox.Show("Lỗi khi xóa: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                MessageBox.Show("Lỗi k  hi xóa: " + ex.Message, "Lỗi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-
+        void loadSizeComboBox()
+        {
+            txt_size.Items.Clear();
+            List<string> sizes = new List<string> { "XS", "S", "M", "L", "XL", "XXL" };
+            txt_size.Items.AddRange(sizes.ToArray());
+        }
         private void btn_huy_Click(object sender, EventArgs e)
         {
             EnableEditMode(false);
@@ -379,7 +387,7 @@ namespace DOANCUOIKY.GiaoDien
             // Load thông tin sản phẩm
             LoadChiTietSanPham(IDBienThe);
 
-            // Chế độ xem (không chỉnh sửa)
+            loadSizeComboBox();
             EnableEditMode(false);
         }
 
@@ -440,6 +448,11 @@ namespace DOANCUOIKY.GiaoDien
         }
 
         private void txt_size_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbb_idhang_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

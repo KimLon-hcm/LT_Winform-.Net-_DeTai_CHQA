@@ -46,7 +46,7 @@ namespace DOANCUOIKY.GiaoDien
                 string hoten = txt_hoten.Text.Trim();
                 string email = txt_email.Text.Trim();
                 string sdt = txt_sdt.Text.Trim();
-                string diachi = txt_diachi.Text.Trim();
+         
                 string mk = txt_MK.Text.Trim();
                 string xnmk = txt_XNMK.Text.Trim();
 
@@ -102,8 +102,8 @@ namespace DOANCUOIKY.GiaoDien
                 // Thêm người dùng mới - Mặc định LoaiTK là 'Khách hàng'
                 string sqlInsert = string.Format(@"
                     INSERT INTO NguoiDung (HoTen, Email, SoDienThoai, MatKhau, VaiTro, TrangThai, NgayTao)
-                    VALUES (N'{0}', '{1}', '{2}', '{3}',  N'Staff',N'{4}', GETDATE())
-                ", hoten, email, sdt, mk, diachi);
+                    VALUES (N'{0}', '{1}', '{2}', '{3}',  N'Staff',1, GETDATE())
+                ", hoten, email, sdt, mk);
 
                 int kq = db.getNonQuery(sqlInsert);
 
@@ -115,7 +115,7 @@ namespace DOANCUOIKY.GiaoDien
                     txt_hoten.Clear();
                     txt_email.Clear();
                     txt_sdt.Clear();
-                    txt_diachi.Clear();
+                   
                     txt_MK.Clear();
                     txt_XNMK.Clear();
 

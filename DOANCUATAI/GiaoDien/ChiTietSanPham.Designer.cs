@@ -56,12 +56,12 @@
             this.txt_mau = new System.Windows.Forms.TextBox();
             this.txt_soluongton = new System.Windows.Forms.TextBox();
             this.txt_giakm = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txt_idhang = new System.Windows.Forms.Label();
             this.cbb_loai = new System.Windows.Forms.ComboBox();
             this.cbb_thuonghieu = new System.Windows.Forms.ComboBox();
             this.txt_size = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txt_idhang = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Anh)).BeginInit();
             this.panel1.SuspendLayout();
@@ -351,27 +351,6 @@
             this.txt_giakm.Size = new System.Drawing.Size(353, 33);
             this.txt_giakm.TabIndex = 48;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(338, 19);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(82, 22);
-            this.label6.TabIndex = 49;
-            this.label6.Text = "IDHang:";
-            // 
-            // txt_idhang
-            // 
-            this.txt_idhang.AutoSize = true;
-            this.txt_idhang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_idhang.ForeColor = System.Drawing.Color.Red;
-            this.txt_idhang.Location = new System.Drawing.Point(439, 19);
-            this.txt_idhang.Name = "txt_idhang";
-            this.txt_idhang.Size = new System.Drawing.Size(29, 22);
-            this.txt_idhang.TabIndex = 50;
-            this.txt_idhang.Text = "ID";
-            // 
             // cbb_loai
             // 
             this.cbb_loai.FormattingEnabled = true;
@@ -432,6 +411,27 @@
             this.groupBox1.TabIndex = 32;
             this.groupBox1.TabStop = false;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(338, 19);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(82, 22);
+            this.label6.TabIndex = 49;
+            this.label6.Text = "IDHang:";
+            // 
+            // txt_idhang
+            // 
+            this.txt_idhang.AutoSize = true;
+            this.txt_idhang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_idhang.ForeColor = System.Drawing.Color.Red;
+            this.txt_idhang.Location = new System.Drawing.Point(439, 19);
+            this.txt_idhang.Name = "txt_idhang";
+            this.txt_idhang.Size = new System.Drawing.Size(29, 22);
+            this.txt_idhang.TabIndex = 50;
+            this.txt_idhang.Text = "ID";
+            // 
             // ChiTietSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -481,13 +481,13 @@
         private System.Windows.Forms.TextBox txt_mau;
         private System.Windows.Forms.TextBox txt_soluongton;
         private System.Windows.Forms.TextBox txt_giakm;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label txt_idhang;
         private System.Windows.Forms.ComboBox cbb_loai;
         private System.Windows.Forms.ComboBox cbb_thuonghieu;
         private System.Windows.Forms.ComboBox txt_size;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lb_bienThe;
         private System.Windows.Forms.ComboBox cbb_Bienthe;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label txt_idhang;
     }
 }

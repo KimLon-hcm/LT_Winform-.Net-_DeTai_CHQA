@@ -55,9 +55,9 @@
             this.label1.Location = new System.Drawing.Point(63, 210);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 24);
+            this.label1.Size = new System.Drawing.Size(229, 24);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Email";
+            this.label1.Text = "Email hoặc Số Điện Thoại";
             // 
             // label2
             // 

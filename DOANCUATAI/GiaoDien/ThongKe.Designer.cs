@@ -33,34 +33,29 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.panelTop = new System.Windows.Forms.Panel();
+            this.lblTongDoanhThu = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
             this.cbDate = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.lblTongDoanhThu = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label11 = new System.Windows.Forms.Label();
             this.panelBottom = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.bang_ThongKe = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panelTop.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bang_ThongKe)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelTop
             // 
+            this.panelTop.Controls.Add(this.lblTongDoanhThu);
+            this.panelTop.Controls.Add(this.label5);
             this.panelTop.Controls.Add(this.flowLayoutPanel2);
             this.panelTop.Controls.Add(this.tableLayoutPanel1);
             this.panelTop.Controls.Add(this.pictureBox1);
@@ -71,6 +66,28 @@
             this.panelTop.Name = "panelTop";
             this.panelTop.Size = new System.Drawing.Size(1227, 172);
             this.panelTop.TabIndex = 37;
+            // 
+            // lblTongDoanhThu
+            // 
+            this.lblTongDoanhThu.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblTongDoanhThu.AutoSize = true;
+            this.lblTongDoanhThu.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTongDoanhThu.Location = new System.Drawing.Point(951, 46);
+            this.lblTongDoanhThu.Name = "lblTongDoanhThu";
+            this.lblTongDoanhThu.Size = new System.Drawing.Size(48, 42);
+            this.lblTongDoanhThu.TabIndex = 34;
+            this.lblTongDoanhThu.Text = "...";
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(621, 42);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(291, 42);
+            this.label5.TabIndex = 33;
+            this.label5.Text = "Tổng doanh thu:";
             // 
             // flowLayoutPanel2
             // 
@@ -122,9 +139,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.49895F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.50105F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 251F));
-            this.tableLayoutPanel1.Controls.Add(this.label5, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.lblTongDoanhThu, 2, 0);
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 250F));
             this.tableLayoutPanel1.Location = new System.Drawing.Point(16, 111);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -132,28 +147,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1183, 49);
             this.tableLayoutPanel1.TabIndex = 32;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(557, 3);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(291, 42);
-            this.label5.TabIndex = 33;
-            this.label5.Text = "Tổng doanh thu:";
-            // 
-            // lblTongDoanhThu
-            // 
-            this.lblTongDoanhThu.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblTongDoanhThu.AutoSize = true;
-            this.lblTongDoanhThu.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTongDoanhThu.Location = new System.Drawing.Point(934, 3);
-            this.lblTongDoanhThu.Name = "lblTongDoanhThu";
-            this.lblTongDoanhThu.Size = new System.Drawing.Size(48, 42);
-            this.lblTongDoanhThu.TabIndex = 34;
-            this.lblTongDoanhThu.Text = "...";
             // 
             // pictureBox1
             // 
@@ -202,7 +195,7 @@
             // 
             chartArea1.Name = "ChartArea1";
             this.bang_ThongKe.ChartAreas.Add(chartArea1);
-            this.bang_ThongKe.Dock = System.Windows.Forms.DockStyle.Left;
+            this.bang_ThongKe.Dock = System.Windows.Forms.DockStyle.Fill;
             legend1.Name = "Legend1";
             this.bang_ThongKe.Legends.Add(legend1);
             this.bang_ThongKe.Location = new System.Drawing.Point(0, 172);
@@ -212,7 +205,7 @@
             series1.LegendText = "Doanh Thu";
             series1.Name = "Doanh Thu";
             this.bang_ThongKe.Series.Add(series1);
-            this.bang_ThongKe.Size = new System.Drawing.Size(620, 568);
+            this.bang_ThongKe.Size = new System.Drawing.Size(1227, 568);
             this.bang_ThongKe.TabIndex = 39;
             this.bang_ThongKe.Text = "Bảng Doanh Thu";
             title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -220,35 +213,11 @@
             title1.Text = "Biểu Đồ Hình Cột";
             this.bang_ThongKe.Titles.Add(title1);
             // 
-            // chart1
-            // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            this.chart1.Dock = System.Windows.Forms.DockStyle.Right;
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
-            this.chart1.Location = new System.Drawing.Point(620, 172);
-            this.chart1.Name = "chart1";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series2.Legend = "Legend1";
-            series2.LegendText = "Doanh Thu";
-            series2.Name = "ThongKeTron";
-            this.chart1.Series.Add(series2);
-            this.chart1.Size = new System.Drawing.Size(607, 568);
-            this.chart1.TabIndex = 40;
-            this.chart1.Text = "Bảng Doanh Thu";
-            title2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title2.Name = "Title1";
-            title2.Text = "Biểu Đồ Hình Cột";
-            this.chart1.Titles.Add(title2);
-            // 
             // ThongKe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1227, 750);
-            this.Controls.Add(this.chart1);
             this.Controls.Add(this.bang_ThongKe);
             this.Controls.Add(this.panelTop);
             this.Controls.Add(this.panelBottom);
@@ -259,12 +228,9 @@
             this.panelTop.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelBottom.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bang_ThongKe)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -279,7 +245,6 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart bang_ThongKe;
         private System.Windows.Forms.Label lblTongDoanhThu;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cbDate;

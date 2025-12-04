@@ -23,11 +23,14 @@ namespace DOANCUOIKY.GiaoDien
 
         DBConnection db = new DBConnection();
 
+        // =====================================================
+        // TÍNH TỔNG DOANH THU
+        // =====================================================
         void loadTongDoanhThu()
         {
             double tong = 0;
 
-            // Chỉ tính tổng khi Series "Doanh  Thu" đang bật
+            // Chỉ tính tổng khi Series "Doanh Thu" đang bật
             if (bang_ThongKe.Series["Doanh Thu"].Enabled)
             {
                 foreach (var item in bang_ThongKe.Series["Doanh Thu"].Points)
@@ -41,10 +44,14 @@ namespace DOANCUOIKY.GiaoDien
             lblTongDoanhThu.Text = temp;
         }
 
+        // =====================================================
+        // LOAD BIỂU ĐỒ CỘT (COLUMN CHART)
+        // =====================================================
         void loadChart(string query)
         {
-            // Bật Series Doanh Thu
+            // Bật Series Doanh Thu - Column Chart
             bang_ThongKe.Series["Doanh Thu"].Enabled = true;
+            bang_ThongKe.Series["Doanh Thu"].ChartType = SeriesChartType.Column;
             lblTongDoanhThu.Visible = true;
             label5.Visible = true;
 
@@ -73,80 +80,7 @@ namespace DOANCUOIKY.GiaoDien
             }
         }
 
-        void loadChart_SanPham(string query)
-        {
-            // Bật Series Doanh Thu
-            bang_ThongKe.Series["Doanh Thu"].Enabled = true;
-            lblTongDoanhThu.Visible = true;
-            label5.Visible = true;
-
-            DataTable dt = db.getDataTable(query);
-            if (dt.Rows.Count > 0)
-            {
-                bang_ThongKe.Series["Doanh Thu"].XValueType = ChartValueType.String;
-                bang_ThongKe.ChartAreas["ChartArea1"].AxisX.Title = "Sản Phẩm";
-                bang_ThongKe.ChartAreas["ChartArea1"].AxisY.Title = "Doanh Thu (VNĐ)";
-                bang_ThongKe.ChartAreas["ChartArea1"].AxisX.Interval = 1;
-                bang_ThongKe.Series["Doanh Thu"]["DrawingStyle"] = "Cylinder";
-                bang_ThongKe.Series["Doanh Thu"].LabelFormat = "{0:N0} VNĐ";
-
-                for (int i = 0; i < dt.Rows.Count; i++)
-                {
-                    bang_ThongKe.Series["Doanh Thu"].Points.AddXY(dt.Rows[i]["TenHang"], dt.Rows[i]["TongDoanh"]);
-                }
-                loadTongDoanhThu();
-            }
-        }
-
-        void loadChart_LoaiHang(string query)
-        {
-            // Bật Series Doanh Thu
-            bang_ThongKe.Series["Doanh Thu"].Enabled = true;
-            lblTongDoanhThu.Visible = true;
-            label5.Visible = true;
-
-            DataTable dt = db.getDataTable(query);
-            if (dt.Rows.Count > 0)
-            {
-                bang_ThongKe.Series["Doanh Thu"].XValueType = ChartValueType.String;
-                bang_ThongKe.ChartAreas["ChartArea1"].AxisX.Title = "Loại Hàng";
-                bang_ThongKe.ChartAreas["ChartArea1"].AxisY.Title = "Doanh Thu (VNĐ)";
-                bang_ThongKe.ChartAreas["ChartArea1"].AxisX.Interval = 1;
-                bang_ThongKe.Series["Doanh Thu"]["DrawingStyle"] = "Cylinder";
-                bang_ThongKe.Series["Doanh Thu"].LabelFormat = "{0:N0} VNĐ";
-
-                for (int i = 0; i < dt.Rows.Count; i++)
-                {
-                    bang_ThongKe.Series["Doanh Thu"].Points.AddXY(dt.Rows[i]["TenLoaiHang"], dt.Rows[i]["TongDoanh"]);
-                }
-                loadTongDoanhThu();
-            }
-        }
-
-        void loadChart_TrangThai(string query)
-        {
-            // Bật Series Doanh Thu
-            bang_ThongKe.Series["Doanh Thu"].Enabled = true;
-            lblTongDoanhThu.Visible = true;
-            label5.Visible = true;
-
-            DataTable dt = db.getDataTable(query);
-            if (dt.Rows.Count > 0)
-            {
-                bang_ThongKe.Series["Doanh Thu"].XValueType = ChartValueType.String;
-                bang_ThongKe.ChartAreas["ChartArea1"].AxisX.Title = "Trạng Thái Đơn Hàng";
-                bang_ThongKe.ChartAreas["ChartArea1"].AxisY.Title = "Doanh Thu (VNĐ)";
-                bang_ThongKe.ChartAreas["ChartArea1"].AxisX.Interval = 1;
-                bang_ThongKe.Series["Doanh Thu"]["DrawingStyle"] = "Cylinder";
-                bang_ThongKe.Series["Doanh Thu"].LabelFormat = "{0:N0} VNĐ";
-
-                for (int i = 0; i < dt.Rows.Count; i++)
-                {
-                    bang_ThongKe.Series["Doanh Thu"].Points.AddXY(dt.Rows[i]["TrangThai"], dt.Rows[i]["TongDoanh"]);
-                }
-                loadTongDoanhThu();
-            }
-        }
+      
 
         void clearChart()
         {
@@ -154,7 +88,6 @@ namespace DOANCUOIKY.GiaoDien
         }
 
      
-
         private void cbDate_SelectedIndexChanged(object sender, EventArgs e)
         {
             clearChart();
@@ -222,54 +155,31 @@ namespace DOANCUOIKY.GiaoDien
         }
 
       
-
         private void chart_Click(object sender, EventArgs e)
         {
             // Xử lý sự kiện click biểu đồ nếu cần
         }
 
-        //private void cbb_thongketour_SelectedIndexChanged_1(object sender, EventArgs e)
-        //{
-        //    clearChart();
-        //    string query = "";
 
-        //    if (cbb_thongketour.SelectedItem == null) return;
 
-        //    switch (cbb_thongketour.SelectedItem.ToString())
-        //    {
-        //        case "Sản Phẩm":
-        //            query = @"SELECT TOP 10 HG.TenHang, SUM(CTD.SoLuong * CTD.DonGia) AS TongDoanh
-        //                      FROM ChiTiet_DonHang CTD
-        //                      JOIN HangHoa_BThe HB ON CTD.IDBienThe = HB.IDBienThe
-        //                      JOIN HangHoa HG ON HB.IDHang = HG.IDHang
-        //                      GROUP BY HG.TenHang
-        //                      ORDER BY TongDoanh DESC";
-        //            loadChart_SanPham(query);
-        //            break;
-
-        //        case "Loại Hàng":
-        //            query = @"SELECT LH.TenLoaiHang, SUM(CTD.SoLuong * CTD.DonGia) AS TongDoanh
-        //                      FROM ChiTiet_DonHang CTD
-        //                      JOIN HangHoa_BThe HB ON CTD.IDBienThe = HB.IDBienThe
-        //                      JOIN HangHoa HG ON HB.IDHang = HG.IDHang
-        //                      JOIN LoaiHang LH ON HG.IDLoaiHang = LH.IDLoaiHang
-        //                      GROUP BY LH.TenLoaiHang
-        //                      ORDER BY TongDoanh DESC";
-        //            loadChart_LoaiHang(query);
-        //            break;
-
-        //        case "Trạng Thái":
-        //            query = @"SELECT TrangThai, SUM(TongThanhToan) AS TongDoanh
-        //                      FROM DonHang
-        //                      GROUP BY TrangThai
-        //                      ORDER BY TongDoanh DESC";
-        //            loadChart_TrangThai(query);
-        //            break;
-        //    }
-        //}
-
+        // =====================================================
+        // LOAD FORM LẦN ĐẦU TIÊN
+        // =====================================================
         private void ThongKe_Load_1(object sender, EventArgs e)
         {
+            if (cbDate.Items.Count == 0)
+            {
+                cbDate.Items.AddRange(new object[] {
+                    "Hôm nay",
+                    "Hôm qua",
+                    "7 ngày qua",
+                    "Tháng này",
+                    "Tháng trước",
+                    "Năm nay"
+                });
+                cbDate.SelectedIndex = 2; 
+            }
+
             string query = @"SELECT CAST(NgayTao AS DATE) AS NgayLap, SUM(TongThanhToan) AS TongTienTongCong
                              FROM DonHang
                              WHERE NgayTao >= DATEADD(DAY, -7, GETDATE()) 
@@ -279,9 +189,6 @@ namespace DOANCUOIKY.GiaoDien
             loadChart(query);
         }
 
-        private void btn_Load_Click(object sender, EventArgs e)
-        {
-
-        }
+     
     }
 }

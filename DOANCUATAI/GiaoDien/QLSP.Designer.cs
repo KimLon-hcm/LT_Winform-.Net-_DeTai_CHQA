@@ -377,6 +377,7 @@
             this.dgv_sanpham.RowTemplate.Height = 24;
             this.dgv_sanpham.Size = new System.Drawing.Size(830, 789);
             this.dgv_sanpham.TabIndex = 42;
+            this.dgv_sanpham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_sanpham_CellClick);
             this.dgv_sanpham.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_sanpham_CellClick);
             // 
             // flowLayoutPanel1
