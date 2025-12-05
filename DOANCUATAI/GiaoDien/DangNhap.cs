@@ -19,7 +19,7 @@ namespace DOANCUOIKY.GiaoDien
             InitializeComponent();
         }
 
-        // Đã xóa hàm checkChucVu() vì không cần thiết nữa
+
 
         private void btn_DangNhap_Click(object sender, EventArgs e)
         {

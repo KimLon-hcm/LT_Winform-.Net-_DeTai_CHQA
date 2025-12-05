@@ -402,24 +402,24 @@ namespace DOANCUOIKY.GiaoDien
             }
         }
 
-        private int GetIDBienThe(int idHang)
-        {
-            try
-            {
-                string query = "SELECT TOP 1 IDBienThe FROM HangHoa_BThe WHERE IDHang = " + idHang;
-                object result = db.getScalar(query);
+        //private int GetIDBienThe(int idHang)
+        //{
+        //    try
+        //    {
+        //        string query = "SELECT TOP 1 IDBienThe FROM HangHoa_BThe WHERE IDHang = " + idHang;
+        //        object result = db.getScalar(query);
 
-                if (result != null && result != DBNull.Value)
-                {
-                    return Convert.ToInt32(result);
-                }
-                return 0;
-            }
-            catch
-            {
-                return 0;
-            }
-        }
+        //        if (result != null && result != DBNull.Value)
+        //        {
+        //            return Convert.ToInt32(result);
+        //        }
+        //        return 0;
+        //    }
+        //    catch
+        //    {
+        //        return 0;
+        //    }
+        //}
       
     }
 }

@@ -89,7 +89,7 @@ namespace DOANCUOIKY.GiaoDien
 
                 if (reader.Read())
                 {
-                    // ===== LƯU TẤT CẢ DỮ LIỆU VÀO BIẾN =====
+                
                     int idHang = Convert.ToInt32(reader["IDHang"]);
                     int idBienTheCurrent = Convert.ToInt32(reader["IDBienThe"]);
                     int idLoaiHang = Convert.ToInt32(reader["IDLoaiHang"]);
@@ -103,11 +103,11 @@ namespace DOANCUOIKY.GiaoDien
                     string hinhAnh = reader["HinhAnh"].ToString();
                     string thuongHieu = reader["ThuongHieu"].ToString();
 
-                    // ===== ĐÓNG READER NGAY =====
+           
                     reader.Close();
                     db.Close();
 
-                    // ===== GÁN DỮ LIỆU VÀO CONTROLS SAU KHI ĐÓNG CONNECTION =====
+                  
                     IDHang = idHang;
                     IDBienThe = idBienTheCurrent;
 
@@ -135,7 +135,7 @@ namespace DOANCUOIKY.GiaoDien
                         cbb_thuonghieu.SelectedItem = thuongHieu;
                     }
 
-                    // Load ComboBox biến thể - DÙNG SqlDataAdapter (không dùng DataReader)
+                    // Load ComboBox biến thể 
                     LoadBienTheComboBox(idHang, idBienTheCurrent);
                 }
                 else
@@ -431,7 +431,7 @@ namespace DOANCUOIKY.GiaoDien
 
             if (cbb_Bienthe.SelectedValue == null) return;
 
-            // Nếu Value là DataRowView → bỏ qua (đang loading datasource)
+            
             if (cbb_Bienthe.SelectedValue is DataRowView)
                 return;
 

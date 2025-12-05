@@ -173,13 +173,13 @@ namespace DOANCUATAI.GiaoDien
                             "'" + ngayLap.ToString("yyyy-MM-dd HH:mm:ss") + "'" +
                         ");";
 
-                // ✅ LẤY IDDonHang VỪA TẠO
+                // LẤY IDDonHang VỪA TẠO
                 string sqlGetLastID = "SELECT IDENT_CURRENT('DonHang') AS LastID;";
                 sqlInsertDH += sqlGetLastID;
 
                 db.getNonQuery(sqlInsertDH);
 
-                // ✅ LẤY IDDonHang (cách 2: nếu cách trên không hoạt động)
+                // LẤY IDDonHang (cách 2: nếu cách trên không hoạt động)
                 object result = db.getScalar("SELECT IDENT_CURRENT('DonHang')");
                 int idDonHang = Convert.ToInt32(result);
 
@@ -201,7 +201,7 @@ namespace DOANCUATAI.GiaoDien
 
                 db.getNonQuery(sqlInsertCT);
 
-                // ✅ Cập nhật số lượng tồn kho
+                // Cập nhật số lượng tồn kho
                 string sqlUpdateSL = "UPDATE HangHoa_BThe SET SoLuongTon = SoLuongTon - " + soLuong + " WHERE IDBienThe = '" + IDBienThe + "'";
 
                 int rowsAffected = db.getNonQuery(sqlUpdateSL);

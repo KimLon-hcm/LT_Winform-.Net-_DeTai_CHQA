@@ -18,7 +18,7 @@ namespace DOANCUOIKY.GiaoDien
         DBConnection db = new DBConnection();
         int IDHH { get; set; }
 
-        // Biến lưu thành tiền từng sản phẩm để in
+  
         private string thanhTienSanPham = "";
 
         public ChiTietDonHang(int iddh)
@@ -88,7 +88,7 @@ namespace DOANCUOIKY.GiaoDien
         {
             try
             {
-                // === LẤY THÔNG TIN SẢN PHẨM TRONG ĐƠN HÀNG ===
+    
                 string sqlChiTiet = @"
                     SELECT 
                         hh.TenHang,
@@ -181,7 +181,7 @@ namespace DOANCUOIKY.GiaoDien
 
                 db.Close();
 
-                // === HIỂN THỊ THÔNG TIN SẢN PHẨM ===
+       
                 lb_ten.Text = sbTenSP.ToString();
                 lb_soluong.Text = sbSoLuong.ToString();
                 lb_gia.Text = sbGia.ToString();

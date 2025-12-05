@@ -211,7 +211,6 @@ namespace DOANCUOIKY
                 return;
             }
 
-            // Kiểm tra mã giảm giá có bị trùng không (ngoại trừ bản ghi hiện tại)
             DataTable dt = (DataTable)dgv_khachhang.DataSource;
             string currentId = txt_ID.Text;
             string newCode = txt_ma.Text;

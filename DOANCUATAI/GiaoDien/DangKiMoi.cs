@@ -97,8 +97,6 @@ namespace DOANCUOIKY.GiaoDien
                     txt_email.Focus();
                     return;
                 }
-
-                // LƯU MẬT KHẨU KHÔNG HASH (Plain text) - KHÔNG AN TOÀN!
                 // Thêm người dùng mới - Mặc định LoaiTK là 'Khách hàng'
                 string sqlInsert = string.Format(@"
                     INSERT INTO NguoiDung (HoTen, Email, SoDienThoai, MatKhau, VaiTro, TrangThai, NgayTao)

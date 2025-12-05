@@ -63,7 +63,7 @@ namespace DOANCUOIKY
                Close();
                return kq;
           }
-          public object getScalar(string chuoitruyvan)//select countColumn name or number of supplied values does not match table definition.'
+          public object getScalar(string chuoitruyvan)
 
           {
                Open();
@@ -145,7 +145,7 @@ namespace DOANCUOIKY
                SqlDataReader rd = cmd.ExecuteReader();
                return rd;
           }
-          public List<NguoiDung> NhanViens()
+          public List<NguoiDung> NguoiDungs()
           {
                List<NguoiDung> nvs = new List<NguoiDung>();
                Open();
@@ -159,10 +159,24 @@ namespace DOANCUOIKY
                return nvs;
 
           }
-          public string getMaNVNext()
+
+        public SqlDataReader ExcuteQuery(string sql, SqlParameter[] parameters)
+        {
+            Open();
+            SqlCommand cmd = new SqlCommand(sql, conn);
+
+            if (parameters != null)
+            {
+                cmd.Parameters.AddRange(parameters);
+            }
+
+            SqlDataReader rd = cmd.ExecuteReader();
+            return rd;
+        }
+        public string getMaNVNext()
           {
                Open();
-               List<NguoiDung> list = NhanViens();
+               List<NguoiDung> list = NguoiDungs();
                if (list.Count == 0)
                {
                     Close();

@@ -42,25 +42,31 @@ namespace DOANCUOIKY
 
         public NguoiDung TimTaiKhoan(string Email)
         {
-            NguoiDung tk = null; 
-         
-            string chuoitruyvan = "SELECT * FROM NguoiDung WHERE Email =  '" + Email + "' ";
+            NguoiDung tk = null;
 
-            SqlDataReader Reader = db.ExcuteQuery(chuoitruyvan);
+            // Thêm COLLATE Latin1_General_CS_AS để phân biệt hoa thường
+            string chuoitruyvan = @"SELECT * FROM NguoiDung 
+                            WHERE Email COLLATE Latin1_General_CS_AS = @Email";
+
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+        new SqlParameter("@Email", Email)
+            };
+
+            SqlDataReader Reader = db.ExcuteQuery(chuoitruyvan, parameters);
 
             if (Reader.Read())
             {
-                tk = new NguoiDung(); 
-                tk.IDNguoiDung = int.Parse(Reader["IDNguoiDung"].ToString()); 
+                tk = new NguoiDung();
+                tk.IDNguoiDung = int.Parse(Reader["IDNguoiDung"].ToString());
                 tk.HoTen = Reader["HoTen"].ToString();
                 tk.SDT = Reader["SoDienThoai"].ToString();
                 tk.MatKhau = Reader["MatKhau"].ToString();
-                tk.Email = Reader["Email"].ToString(); 
-
+                tk.Email = Reader["Email"].ToString();
                 tk.VaiTro = Reader["VaiTro"].ToString();
                 tk.NgayTao = DateTime.Parse(Reader["NgayTao"].ToString());
             }
-            Reader.Close(); 
+            Reader.Close();
             return tk;
         }
         public NguoiDung TimTaiKhoanSDT(string Sdt)
