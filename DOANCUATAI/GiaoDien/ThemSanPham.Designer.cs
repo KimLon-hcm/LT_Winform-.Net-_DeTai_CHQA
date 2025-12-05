@@ -84,6 +84,10 @@
             this.Anh.Size = new System.Drawing.Size(562, 594);
             this.Anh.TabIndex = 0;
             this.Anh.TabStop = false;
+
+            this.Anh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+
+
             // 
             // btn_luu
             // 
