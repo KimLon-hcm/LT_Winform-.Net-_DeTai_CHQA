@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QLSP));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label11 = new System.Windows.Forms.Label();
             this.panelLeft = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -51,32 +50,23 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txt_chuthich = new System.Windows.Forms.RichTextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.picture = new System.Windows.Forms.PictureBox();
             this.dgv_sanpham = new System.Windows.Forms.DataGridView();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btn_them = new System.Windows.Forms.Button();
-            this.btn_xoa = new System.Windows.Forms.Button();
             this.btn_DatHang = new System.Windows.Forms.Button();
             this.btn_ChiTiet = new System.Windows.Forms.Button();
+            this.btn_them = new System.Windows.Forms.Button();
+            this.btn_xoa = new System.Windows.Forms.Button();
             this.reset = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.picture = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelLeft.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_sanpham)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.ErrorImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(8, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 72);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 29;
-            this.pictureBox1.TabStop = false;
             // 
             // label11
             // 
@@ -354,19 +344,6 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Hình Ảnh";
             // 
-            // picture
-            // 
-            this.picture.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.picture.Enabled = false;
-            this.picture.Location = new System.Drawing.Point(147, 102);
-            this.picture.Name = "picture";
-            this.picture.Size = new System.Drawing.Size(367, 199);
-            this.picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picture.TabIndex = 33;
-            this.picture.TabStop = false;
-            // 
             // dgv_sanpham
             // 
             this.dgv_sanpham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -394,6 +371,40 @@
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
             this.flowLayoutPanel1.Size = new System.Drawing.Size(830, 61);
             this.flowLayoutPanel1.TabIndex = 43;
+            // 
+            // btn_DatHang
+            // 
+            this.btn_DatHang.BackColor = System.Drawing.Color.Cyan;
+            this.btn_DatHang.FlatAppearance.BorderSize = 0;
+            this.btn_DatHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_DatHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_DatHang.ForeColor = System.Drawing.Color.White;
+            this.btn_DatHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_DatHang.Location = new System.Drawing.Point(314, 3);
+            this.btn_DatHang.Name = "btn_DatHang";
+            this.btn_DatHang.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btn_DatHang.Size = new System.Drawing.Size(142, 53);
+            this.btn_DatHang.TabIndex = 37;
+            this.btn_DatHang.Text = "Đặt Hàng";
+            this.btn_DatHang.UseVisualStyleBackColor = false;
+            this.btn_DatHang.Click += new System.EventHandler(this.btn_DatHang_Click);
+            // 
+            // btn_ChiTiet
+            // 
+            this.btn_ChiTiet.BackColor = System.Drawing.Color.Lime;
+            this.btn_ChiTiet.FlatAppearance.BorderSize = 0;
+            this.btn_ChiTiet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ChiTiet.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ChiTiet.ForeColor = System.Drawing.Color.White;
+            this.btn_ChiTiet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_ChiTiet.Location = new System.Drawing.Point(166, 3);
+            this.btn_ChiTiet.Name = "btn_ChiTiet";
+            this.btn_ChiTiet.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btn_ChiTiet.Size = new System.Drawing.Size(142, 53);
+            this.btn_ChiTiet.TabIndex = 3;
+            this.btn_ChiTiet.Text = "Chi Tiết";
+            this.btn_ChiTiet.UseVisualStyleBackColor = false;
+            this.btn_ChiTiet.Click += new System.EventHandler(this.button1_Click);
             // 
             // btn_them
             // 
@@ -431,40 +442,6 @@
             this.btn_xoa.UseVisualStyleBackColor = false;
             this.btn_xoa.Click += new System.EventHandler(this.btn_xoa_Click);
             // 
-            // btn_DatHang
-            // 
-            this.btn_DatHang.BackColor = System.Drawing.Color.Cyan;
-            this.btn_DatHang.FlatAppearance.BorderSize = 0;
-            this.btn_DatHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_DatHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_DatHang.ForeColor = System.Drawing.Color.White;
-            this.btn_DatHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_DatHang.Location = new System.Drawing.Point(314, 3);
-            this.btn_DatHang.Name = "btn_DatHang";
-            this.btn_DatHang.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btn_DatHang.Size = new System.Drawing.Size(142, 53);
-            this.btn_DatHang.TabIndex = 37;
-            this.btn_DatHang.Text = "Đặt Hàng";
-            this.btn_DatHang.UseVisualStyleBackColor = false;
-            this.btn_DatHang.Click += new System.EventHandler(this.btn_DatHang_Click);
-            // 
-            // btn_ChiTiet
-            // 
-            this.btn_ChiTiet.BackColor = System.Drawing.Color.Lime;
-            this.btn_ChiTiet.FlatAppearance.BorderSize = 0;
-            this.btn_ChiTiet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_ChiTiet.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_ChiTiet.ForeColor = System.Drawing.Color.White;
-            this.btn_ChiTiet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_ChiTiet.Location = new System.Drawing.Point(166, 3);
-            this.btn_ChiTiet.Name = "btn_ChiTiet";
-            this.btn_ChiTiet.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btn_ChiTiet.Size = new System.Drawing.Size(142, 53);
-            this.btn_ChiTiet.TabIndex = 3;
-            this.btn_ChiTiet.Text = "Chi Tiết";
-            this.btn_ChiTiet.UseVisualStyleBackColor = false;
-            this.btn_ChiTiet.Click += new System.EventHandler(this.button1_Click);
-            // 
             // reset
             // 
             this.reset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -483,6 +460,29 @@
             this.reset.UseVisualStyleBackColor = false;
             this.reset.Click += new System.EventHandler(this.reset_Click_1);
             // 
+            // picture
+            // 
+            this.picture.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.picture.Enabled = false;
+            this.picture.Location = new System.Drawing.Point(147, 102);
+            this.picture.Name = "picture";
+            this.picture.Size = new System.Drawing.Size(367, 199);
+            this.picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picture.TabIndex = 33;
+            this.picture.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.ErrorImage = null;
+            this.pictureBox1.Location = new System.Drawing.Point(8, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 72);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 29;
+            this.pictureBox1.TabStop = false;
+            // 
             // QLSP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -497,16 +497,16 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "QLTour";
             this.Load += new System.EventHandler(this.QLSP_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelLeft.ResumeLayout(false);
             this.panelLeft.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_sanpham)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

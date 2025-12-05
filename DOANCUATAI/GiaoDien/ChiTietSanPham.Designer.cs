@@ -36,7 +36,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.lb_bienThe = new System.Windows.Forms.Label();
             this.cbb_Bienthe = new System.Windows.Forms.ComboBox();
-            this.Anh = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -60,12 +59,13 @@
             this.cbb_thuonghieu = new System.Windows.Forms.ComboBox();
             this.txt_size = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.txt_idhang = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.Anh = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Anh)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Anh)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_Sua
@@ -155,14 +155,6 @@
             this.cbb_Bienthe.Size = new System.Drawing.Size(76, 24);
             this.cbb_Bienthe.TabIndex = 40;
             this.cbb_Bienthe.SelectedIndexChanged += new System.EventHandler(this.cbb_Bienthe_SelectedIndexChanged_1);
-            // 
-            // Anh
-            // 
-            this.Anh.Location = new System.Drawing.Point(0, 0);
-            this.Anh.Name = "Anh";
-            this.Anh.Size = new System.Drawing.Size(562, 575);
-            this.Anh.TabIndex = 0;
-            this.Anh.TabStop = false;
             // 
             // panel1
             // 
@@ -410,16 +402,7 @@
             this.groupBox1.Size = new System.Drawing.Size(555, 705);
             this.groupBox1.TabIndex = 32;
             this.groupBox1.TabStop = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(338, 19);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(82, 22);
-            this.label6.TabIndex = 49;
-            this.label6.Text = "IDHang:";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // txt_idhang
             // 
@@ -431,6 +414,24 @@
             this.txt_idhang.Size = new System.Drawing.Size(29, 22);
             this.txt_idhang.TabIndex = 50;
             this.txt_idhang.Text = "ID";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(338, 19);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(82, 22);
+            this.label6.TabIndex = 49;
+            this.label6.Text = "IDHang:";
+            // 
+            // Anh
+            // 
+            this.Anh.Location = new System.Drawing.Point(0, 0);
+            this.Anh.Name = "Anh";
+            this.Anh.Size = new System.Drawing.Size(562, 575);
+            this.Anh.TabIndex = 0;
+            this.Anh.TabStop = false;
             // 
             // ChiTietSanPham
             // 
@@ -445,10 +446,10 @@
             this.Load += new System.EventHandler(this.ChiTietSanPham_Load_1);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Anh)).EndInit();
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Anh)).EndInit();
             this.ResumeLayout(false);
 
         }

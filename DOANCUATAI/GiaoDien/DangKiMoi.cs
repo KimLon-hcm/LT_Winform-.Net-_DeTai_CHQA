@@ -138,6 +138,9 @@ namespace DOANCUOIKY.GiaoDien
             this.Close();
         }
 
+        private void backgroundWorker1_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
 
+        }
     }
 }

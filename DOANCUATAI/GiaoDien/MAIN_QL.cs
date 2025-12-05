@@ -158,7 +158,7 @@ namespace DOANCUOIKY.GiaoDien
             panelFloating.Show();
             panelFloating.Height = btn_QLSP.Height;
             panelFloating.Top = btn_QLSP.Top;
-            OpenChildForm(new QLSP());
+            OpenChildForm(new QLSP(IDND));
             labelShowDesktop.Text = btn_QLSP.Text;
         }
 

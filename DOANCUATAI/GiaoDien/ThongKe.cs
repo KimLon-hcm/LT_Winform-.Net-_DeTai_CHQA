@@ -23,14 +23,11 @@ namespace DOANCUOIKY.GiaoDien
 
         DBConnection db = new DBConnection();
 
-        // =====================================================
-        // TÍNH TỔNG DOANH THU
-        // =====================================================
+      
         void loadTongDoanhThu()
         {
             double tong = 0;
 
-            // Chỉ tính tổng khi Series "Doanh Thu" đang bật
             if (bang_ThongKe.Series["Doanh Thu"].Enabled)
             {
                 foreach (var item in bang_ThongKe.Series["Doanh Thu"].Points)
@@ -44,12 +41,10 @@ namespace DOANCUOIKY.GiaoDien
             lblTongDoanhThu.Text = temp;
         }
 
-        // =====================================================
-        // LOAD BIỂU ĐỒ CỘT (COLUMN CHART)
-        // =====================================================
+       
         void loadChart(string query)
         {
-            // Bật Series Doanh Thu - Column Chart
+
             bang_ThongKe.Series["Doanh Thu"].Enabled = true;
             bang_ThongKe.Series["Doanh Thu"].ChartType = SeriesChartType.Column;
             lblTongDoanhThu.Visible = true;
@@ -157,14 +152,8 @@ namespace DOANCUOIKY.GiaoDien
       
         private void chart_Click(object sender, EventArgs e)
         {
-            // Xử lý sự kiện click biểu đồ nếu cần
+            // Xử lý sự kiệnbiểu đồ nếu cần
         }
-
-
-
-        // =====================================================
-        // LOAD FORM LẦN ĐẦU TIÊN
-        // =====================================================
         private void ThongKe_Load_1(object sender, EventArgs e)
         {
             if (cbDate.Items.Count == 0)

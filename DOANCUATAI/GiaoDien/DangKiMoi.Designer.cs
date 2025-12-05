@@ -46,63 +46,53 @@
             this.btn_DangKy = new System.Windows.Forms.Button();
             this.txt_XNMK = new System.Windows.Forms.TextBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panelControls.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelControls
             // 
             this.panelControls.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.panelControls.Controls.Add(this.txt_sdt);
-            this.panelControls.Controls.Add(this.txt_email);
-            this.panelControls.Controls.Add(this.txt_hoten);
-            this.panelControls.Controls.Add(this.label7);
-            this.panelControls.Controls.Add(this.label6);
+            this.panelControls.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelControls.BackgroundImage")));
+            this.panelControls.Controls.Add(this.panel1);
             this.panelControls.Controls.Add(this.label1);
-            this.panelControls.Controls.Add(this.label4);
-            this.panelControls.Controls.Add(this.label5);
-            this.panelControls.Controls.Add(this.label2);
-            this.panelControls.Controls.Add(this.label3);
-            this.panelControls.Controls.Add(this.cbShowPass);
-            this.panelControls.Controls.Add(this.exitButton);
-            this.panelControls.Controls.Add(this.txt_MK);
-            this.panelControls.Controls.Add(this.btn_DangKy);
-            this.panelControls.Controls.Add(this.txt_XNMK);
             this.panelControls.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControls.Location = new System.Drawing.Point(0, 0);
             this.panelControls.Margin = new System.Windows.Forms.Padding(4);
             this.panelControls.Name = "panelControls";
-            this.panelControls.Size = new System.Drawing.Size(676, 657);
+            this.panelControls.Size = new System.Drawing.Size(1034, 794);
             this.panelControls.TabIndex = 14;
             // 
             // txt_sdt
             // 
-            this.txt_sdt.Location = new System.Drawing.Point(194, 255);
+            this.txt_sdt.Location = new System.Drawing.Point(194, 274);
             this.txt_sdt.Multiline = true;
             this.txt_sdt.Name = "txt_sdt";
-            this.txt_sdt.Size = new System.Drawing.Size(466, 35);
+            this.txt_sdt.Size = new System.Drawing.Size(398, 35);
             this.txt_sdt.TabIndex = 25;
             // 
             // txt_email
             // 
-            this.txt_email.Location = new System.Drawing.Point(193, 181);
+            this.txt_email.Location = new System.Drawing.Point(194, 208);
             this.txt_email.Multiline = true;
             this.txt_email.Name = "txt_email";
-            this.txt_email.Size = new System.Drawing.Size(466, 35);
+            this.txt_email.Size = new System.Drawing.Size(398, 35);
             this.txt_email.TabIndex = 23;
             // 
             // txt_hoten
             // 
-            this.txt_hoten.Location = new System.Drawing.Point(194, 103);
+            this.txt_hoten.Location = new System.Drawing.Point(195, 139);
             this.txt_hoten.Multiline = true;
             this.txt_hoten.Name = "txt_hoten";
-            this.txt_hoten.Size = new System.Drawing.Size(466, 35);
+            this.txt_hoten.Size = new System.Drawing.Size(397, 35);
             this.txt_hoten.TabIndex = 22;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(25, 103);
+            this.label7.Location = new System.Drawing.Point(11, 150);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(98, 24);
@@ -113,7 +103,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(13, 257);
+            this.label6.Location = new System.Drawing.Point(10, 285);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(130, 24);
@@ -135,7 +125,7 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(246, 32);
+            this.label4.Location = new System.Drawing.Point(176, 64);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(179, 46);
@@ -146,7 +136,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(33, 192);
+            this.label5.Location = new System.Drawing.Point(20, 219);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(57, 24);
@@ -157,7 +147,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(33, 344);
+            this.label2.Location = new System.Drawing.Point(11, 348);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(91, 24);
@@ -168,7 +158,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(25, 436);
+            this.label3.Location = new System.Drawing.Point(10, 413);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(160, 24);
@@ -183,7 +173,7 @@
             this.cbShowPass.FlatAppearance.BorderSize = 0;
             this.cbShowPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbShowPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbShowPass.Location = new System.Drawing.Point(262, 493);
+            this.cbShowPass.Location = new System.Drawing.Point(239, 450);
             this.cbShowPass.Margin = new System.Windows.Forms.Padding(4);
             this.cbShowPass.Name = "cbShowPass";
             this.cbShowPass.Size = new System.Drawing.Size(163, 28);
@@ -202,7 +192,7 @@
             this.exitButton.FlatAppearance.BorderSize = 0;
             this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exitButton.ForeColor = System.Drawing.Color.Transparent;
-            this.exitButton.Location = new System.Drawing.Point(586, 15);
+            this.exitButton.Location = new System.Drawing.Point(517, 69);
             this.exitButton.Margin = new System.Windows.Forms.Padding(4);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(75, 63);
@@ -218,10 +208,10 @@
             this.txt_MK.BackColor = System.Drawing.SystemColors.Window;
             this.txt_MK.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_MK.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.txt_MK.Location = new System.Drawing.Point(194, 332);
+            this.txt_MK.Location = new System.Drawing.Point(194, 336);
             this.txt_MK.Margin = new System.Windows.Forms.Padding(4);
             this.txt_MK.Name = "txt_MK";
-            this.txt_MK.Size = new System.Drawing.Size(466, 41);
+            this.txt_MK.Size = new System.Drawing.Size(398, 41);
             this.txt_MK.TabIndex = 3;
             this.txt_MK.UseSystemPasswordChar = true;
             // 
@@ -234,10 +224,10 @@
             this.btn_DangKy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_DangKy.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
             this.btn_DangKy.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_DangKy.Location = new System.Drawing.Point(66, 529);
+            this.btn_DangKy.Location = new System.Drawing.Point(119, 496);
             this.btn_DangKy.Margin = new System.Windows.Forms.Padding(4);
             this.btn_DangKy.Name = "btn_DangKy";
-            this.btn_DangKy.Size = new System.Drawing.Size(548, 53);
+            this.btn_DangKy.Size = new System.Drawing.Size(378, 53);
             this.btn_DangKy.TabIndex = 6;
             this.btn_DangKy.Text = "Đăng Ký";
             this.btn_DangKy.UseVisualStyleBackColor = false;
@@ -250,23 +240,51 @@
             this.txt_XNMK.BackColor = System.Drawing.SystemColors.HighlightText;
             this.txt_XNMK.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_XNMK.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.txt_XNMK.Location = new System.Drawing.Point(193, 424);
+            this.txt_XNMK.Location = new System.Drawing.Point(194, 401);
             this.txt_XNMK.Margin = new System.Windows.Forms.Padding(4);
             this.txt_XNMK.Name = "txt_XNMK";
-            this.txt_XNMK.Size = new System.Drawing.Size(466, 41);
+            this.txt_XNMK.Size = new System.Drawing.Size(398, 41);
             this.txt_XNMK.TabIndex = 4;
             this.txt_XNMK.UseSystemPasswordChar = true;
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.btn_DangKy);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.exitButton);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.txt_hoten);
+            this.panel1.Controls.Add(this.txt_email);
+            this.panel1.Controls.Add(this.txt_sdt);
+            this.panel1.Controls.Add(this.cbShowPass);
+            this.panel1.Controls.Add(this.txt_XNMK);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.txt_MK);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Location = new System.Drawing.Point(232, 113);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(613, 582);
+            this.panel1.TabIndex = 26;
             // 
             // DangKyMoi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(676, 657);
+            this.ClientSize = new System.Drawing.Size(1034, 794);
             this.Controls.Add(this.panelControls);
             this.Name = "DangKyMoi";
             this.Text = "DangKiMoi";
             this.panelControls.ResumeLayout(false);
             this.panelControls.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -290,5 +308,6 @@
         private System.Windows.Forms.TextBox txt_sdt;
         private System.Windows.Forms.TextBox txt_email;
         private System.Windows.Forms.TextBox txt_hoten;
+        private System.Windows.Forms.Panel panel1;
     }
 }

@@ -35,13 +35,11 @@
             this.txt_MK = new System.Windows.Forms.TextBox();
             this.btn_DangNhap = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBoxShowPass = new System.Windows.Forms.PictureBox();
             this.pictureBoxHidePass = new System.Windows.Forms.PictureBox();
             this.panelControls = new System.Windows.Forms.Panel();
             this.btn_dki = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxShowPass)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHidePass)).BeginInit();
             this.panelControls.SuspendLayout();
@@ -80,7 +78,7 @@
             this.txt_email.Location = new System.Drawing.Point(67, 236);
             this.txt_email.Margin = new System.Windows.Forms.Padding(4);
             this.txt_email.Name = "txt_email";
-            this.txt_email.Size = new System.Drawing.Size(574, 41);
+            this.txt_email.Size = new System.Drawing.Size(380, 41);
             this.txt_email.TabIndex = 1;
             // 
             // txt_MK
@@ -93,7 +91,7 @@
             this.txt_MK.Location = new System.Drawing.Point(67, 327);
             this.txt_MK.Margin = new System.Windows.Forms.Padding(4);
             this.txt_MK.Name = "txt_MK";
-            this.txt_MK.Size = new System.Drawing.Size(574, 41);
+            this.txt_MK.Size = new System.Drawing.Size(380, 41);
             this.txt_MK.TabIndex = 2;
             this.txt_MK.UseSystemPasswordChar = true;
             // 
@@ -106,10 +104,10 @@
             this.btn_DangNhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_DangNhap.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_DangNhap.ForeColor = System.Drawing.Color.White;
-            this.btn_DangNhap.Location = new System.Drawing.Point(357, 390);
+            this.btn_DangNhap.Location = new System.Drawing.Point(295, 390);
             this.btn_DangNhap.Margin = new System.Windows.Forms.Padding(4);
             this.btn_DangNhap.Name = "btn_DangNhap";
-            this.btn_DangNhap.Size = new System.Drawing.Size(248, 53);
+            this.btn_DangNhap.Size = new System.Drawing.Size(116, 53);
             this.btn_DangNhap.TabIndex = 3;
             this.btn_DangNhap.Text = "Sign In";
             this.btn_DangNhap.UseVisualStyleBackColor = false;
@@ -126,7 +124,7 @@
             this.exitButton.FlatAppearance.BorderSize = 0;
             this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exitButton.ForeColor = System.Drawing.Color.Transparent;
-            this.exitButton.Location = new System.Drawing.Point(612, 15);
+            this.exitButton.Location = new System.Drawing.Point(418, 15);
             this.exitButton.Margin = new System.Windows.Forms.Padding(4);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(75, 63);
@@ -135,24 +133,12 @@
             this.exitButton.UseVisualStyleBackColor = false;
             this.exitButton.Click += new System.EventHandler(this.button1_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(753, 640);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            // 
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(240, 122);
+            this.label3.Location = new System.Drawing.Point(143, 122);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(223, 46);
@@ -164,7 +150,7 @@
             this.pictureBoxShowPass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxShowPass.BackColor = System.Drawing.Color.White;
             this.pictureBoxShowPass.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxShowPass.Image")));
-            this.pictureBoxShowPass.Location = new System.Drawing.Point(565, 334);
+            this.pictureBoxShowPass.Location = new System.Drawing.Point(371, 334);
             this.pictureBoxShowPass.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxShowPass.Name = "pictureBoxShowPass";
             this.pictureBoxShowPass.Size = new System.Drawing.Size(69, 34);
@@ -178,7 +164,7 @@
             this.pictureBoxHidePass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxHidePass.BackColor = System.Drawing.Color.White;
             this.pictureBoxHidePass.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxHidePass.Image")));
-            this.pictureBoxHidePass.Location = new System.Drawing.Point(565, 334);
+            this.pictureBoxHidePass.Location = new System.Drawing.Point(371, 334);
             this.pictureBoxHidePass.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxHidePass.Name = "pictureBoxHidePass";
             this.pictureBoxHidePass.Size = new System.Drawing.Size(69, 34);
@@ -189,7 +175,7 @@
             // 
             // panelControls
             // 
-            this.panelControls.BackColor = System.Drawing.Color.White;
+            this.panelControls.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panelControls.Controls.Add(this.btn_dki);
             this.panelControls.Controls.Add(this.label3);
             this.panelControls.Controls.Add(this.pictureBoxHidePass);
@@ -200,11 +186,10 @@
             this.panelControls.Controls.Add(this.txt_MK);
             this.panelControls.Controls.Add(this.exitButton);
             this.panelControls.Controls.Add(this.btn_DangNhap);
-            this.panelControls.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControls.Location = new System.Drawing.Point(753, 0);
+            this.panelControls.Location = new System.Drawing.Point(504, 75);
             this.panelControls.Margin = new System.Windows.Forms.Padding(4);
             this.panelControls.Name = "panelControls";
-            this.panelControls.Size = new System.Drawing.Size(702, 640);
+            this.panelControls.Size = new System.Drawing.Size(508, 554);
             this.panelControls.TabIndex = 0;
             // 
             // btn_dki
@@ -216,10 +201,10 @@
             this.btn_dki.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_dki.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_dki.ForeColor = System.Drawing.Color.White;
-            this.btn_dki.Location = new System.Drawing.Point(67, 390);
+            this.btn_dki.Location = new System.Drawing.Point(82, 390);
             this.btn_dki.Margin = new System.Windows.Forms.Padding(4);
             this.btn_dki.Name = "btn_dki";
-            this.btn_dki.Size = new System.Drawing.Size(261, 53);
+            this.btn_dki.Size = new System.Drawing.Size(141, 53);
             this.btn_dki.TabIndex = 16;
             this.btn_dki.Text = "Đăng Kí";
             this.btn_dki.UseVisualStyleBackColor = false;
@@ -230,9 +215,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1455, 640);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(1480, 706);
             this.Controls.Add(this.panelControls);
-            this.Controls.Add(this.pictureBox1);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.HelpButton = true;
@@ -242,7 +227,6 @@
             this.Text = "DangNhap";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DangNhap_FormClosing);
             this.Load += new System.EventHandler(this.DangNhap_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxShowPass)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHidePass)).EndInit();
             this.panelControls.ResumeLayout(false);
@@ -259,7 +243,6 @@
         private System.Windows.Forms.TextBox txt_MK;
         private System.Windows.Forms.Button btn_DangNhap;
         private System.Windows.Forms.Button exitButton;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label3;
         // private System.Windows.Forms.Label label5; // Xóa label5
         private System.Windows.Forms.PictureBox pictureBoxShowPass;

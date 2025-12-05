@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using DOANCUATAI.GiaoDien;
 using DOANCUOIKY.GiaoDien;
 
 namespace DOANCUOIKY.GiaoDien
@@ -12,10 +13,12 @@ namespace DOANCUOIKY.GiaoDien
     {
         DBConnection db = new DBConnection();
         private string tenFileAnhMoi = "";
+        public int IDND { get; set; }
 
-        public QLSP()
+        public QLSP(int idND)
         {
             InitializeComponent();
+            IDND = idND;
         }
 
         private void QLSP_Load(object sender, EventArgs e)
@@ -358,7 +361,65 @@ namespace DOANCUOIKY.GiaoDien
 
         private void btn_DatHang_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (string.IsNullOrEmpty(txt_idhang.Text))
+                {
+                    MessageBox.Show("Vui lòng chọn một sản phẩm để đặt hàng!", "Thông báo",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
+                int idHang = int.Parse(txt_idhang.Text.Trim());
+                int idBienThe = 0;
+
+                // Lấy IDBienThe từ dòng hiện tại trong DataGridView
+                if (dgv_sanpham.CurrentRow != null)
+                {
+                    if (dgv_sanpham.CurrentRow.Cells["IDBienThe"].Value != null &&
+                        int.TryParse(dgv_sanpham.CurrentRow.Cells["IDBienThe"].Value.ToString(), out int tempId))
+                    {
+                        idBienThe = tempId;
+                    }
+                }
+
+                if (idBienThe == 0)
+                {
+                    MessageBox.Show("Không tìm thấy biến thể sản phẩm!", "Lỗi",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                DatHang frm = new DatHang(IDND, idHang, idBienThe);
+                this.Hide();
+                frm.ShowDialog();
+                this.Show();
+
+                HienThiDSSanPham();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi đặt hàng: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
+        private int GetIDBienThe(int idHang)
+        {
+            try
+            {
+                string query = "SELECT TOP 1 IDBienThe FROM HangHoa_BThe WHERE IDHang = " + idHang;
+                object result = db.getScalar(query);
+
+                if (result != null && result != DBNull.Value)
+                {
+                    return Convert.ToInt32(result);
+                }
+                return 0;
+            }
+            catch
+            {
+                return 0;
+            }
+        }
+      
     }
 }

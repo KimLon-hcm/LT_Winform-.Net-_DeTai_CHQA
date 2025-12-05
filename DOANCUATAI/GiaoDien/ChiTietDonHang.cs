@@ -174,17 +174,8 @@ namespace DOANCUOIKY.GiaoDien
                     txt_thanhtien.Text = thanhTienTong.ToString("N0") + " VNĐ";
 
                     // Trạng thái
-                    string trangThai = readerDonHang["TrangThai"].ToString();
-                    if (trangThai == "0")
-                        txt_trangthai.Text = "Chờ xác nhận";
-                    else if (trangThai == "1")
-                        txt_trangthai.Text = "Đã xác nhận";
-                    else if (trangThai == "2")
-                        txt_trangthai.Text = "Đang giao";
-                    else if (trangThai == "3")
-                        txt_trangthai.Text = "Đã giao";
-                    else
-                        txt_trangthai.Text = "Hủy";
+                    txt_trangthai.Text = readerDonHang["TrangThai"].ToString();
+              
                 }
                 readerDonHang.Close();
 
